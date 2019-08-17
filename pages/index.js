@@ -1,0 +1,1 @@
+export default () => <div>Test n fsd ext.js!</div>
