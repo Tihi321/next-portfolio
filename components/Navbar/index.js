@@ -1,9 +1,11 @@
 import React from 'react'
 import Link from 'next/link';
 
+import style from './Navbar.scss';
+
 const Navbar = () => {
   return (
-    <nav>
+    <nav className={style.navbar}>
       <ul>
         <li>
           <Link href="/">
