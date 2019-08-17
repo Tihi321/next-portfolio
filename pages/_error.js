@@ -10,7 +10,7 @@ class Error extends React.Component {
     return (
       <p>
         {this.props.statusCode
-          ? `An error ${this.props.statusCode} occurred on server`
+          ? `An error ${this.props.statusCode} occurred on this server`
           : 'An error occurred on client'}
       </p>
     )
