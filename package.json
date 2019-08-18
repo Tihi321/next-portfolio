@@ -1,9 +1,10 @@
 {
   "scripts": {
+    "deve": "cross-env NEXT_ENV=development next",
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "production-start": "npm install -f && npm run build && npm run start"
+    "production-start": "cross-env NEXT_ENV=production npm install -f && npm run build && npm run start"
   },
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
@@ -16,6 +17,7 @@
     "react-use": "^10.6.0"
   },
   "devDependencies": {
-    "autoprefixer": "^9.6.1"
+    "autoprefixer": "^9.6.1",
+    "cross-env": "^5.2.0"
   }
 }
