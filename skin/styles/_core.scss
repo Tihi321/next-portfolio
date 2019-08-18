@@ -1,12 +1,17 @@
-/* stylelint-disable-line selector-no-type */
-*,
-*::after,
-*::before {
-  @include box-sizing;
-}
+@import 'normalize-scss';
+@include normalize(); // stylelint-disable-line at-rule-empty-line-before
+
+@import 'eightshift-frontend-libs';
 
 html {
   font-size: $base-font-size;
+
+  *,
+  *::after,
+  *::before {
+    @include box-sizing;
+  }
+
 }
 
 body {

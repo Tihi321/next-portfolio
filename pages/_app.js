@@ -2,6 +2,8 @@ import React from 'react';
 import App from 'next/app';
 import 'isomorphic-fetch';
 
+import '../skin/styles/_core.scss';
+
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
 
