@@ -1,0 +1,42 @@
+//Text single size item from map
+@mixin text-size($size, $map: $typography-map-default) {
+  $i: 0;
+
+  @each $breakpoint, $breakpointMap in $map {
+    $inner_map: map_get($breakpointMap, $size);
+
+    @if (type-of($inner_map) == 'map') {
+      @if $i == 0 {
+        @if map-has-key($inner_map, 'size') {
+          font-size: map_get($inner_map, 'size');
+        }
+        @if map-has-key($inner_map, 'line-height') {
+          line-height: map_get($inner_map, 'line-height');
+        }
+      }
+
+      @else {
+        @if type-of( $inner_map ) == 'map' {
+          @include media(#{$breakpoint} up) { // stylelint-disable-line max-nesting-depth
+            @if map-has-key($inner_map, 'size') { // stylelint-disable-line max-nesting-depth
+              font-size: map_get($inner_map, 'size');
+            }
+            @if map-has-key($inner_map, 'line-height') { // stylelint-disable-line max-nesting-depth
+              line-height: map_get($inner_map, 'line-height');
+            }
+          }
+        }
+      }
+      $i: $i + 1;
+    }
+  }
+}
+
+//Link single color item from map
+@mixin link-color($key) {
+  color: map-get-strict($key, color);
+
+  &:hover {
+    color: map-get-strict($key, hover);
+  }
+}

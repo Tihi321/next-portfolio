@@ -1,0 +1,22 @@
+/*
+Some default color are defined in eightshift-frontend-libs as defaults.
+If you want to override it just define it with new value here.
+
+All variables are available here:
+https://github.com/infinum/eightshift-frontend-libs/blob/develop/scss/_colors.scss
+*/
+
+/* colors */
+
+$base-mine-color:       #333333;
+$base-dove-color:       #666666;
+$base-dusty-color:      #999999;
+$base-silver-color:     #CCCCCC;
+$base-concrete-color:   #F2F2F2;
+$base-crimson-color:    #DA291C;
+$base-hippie-color:     #6699AC;
+$base-success-color:    #6E8F50;
+
+
+$base-text-color: $base-dove-color;
+$base-primary-color: $base-crimson-color;
