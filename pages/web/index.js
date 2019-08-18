@@ -4,7 +4,7 @@ import Head from '../../components/Head';
 export default () => {
   return (
     <>
-      <Head title="Tihomir Selak Portfolio" />
+      <Head title="Web Development" />
       <Navbar />
       <div>Web</div>
     </>

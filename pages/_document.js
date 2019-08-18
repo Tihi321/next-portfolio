@@ -11,10 +11,9 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="icon" sizes="192x192" href="/static/touch-icon.png" />
-          <link rel="apple-touch-icon" href="/static/touch-icon.png" />
-          <link rel="mask-icon" href="/static/favicon-mask.svg" color="#49B882" />
-          <link rel="icon" href="/static/favicon.ico" />
+          <link rel="icon" type="image/png" href="https://cdn.tihomir-selak.from.hr/assets/portfolio/favicon-32x32.png" sizes="32x32" />
+          <link rel="icon" type="image/png" href="https://cdn.tihomir-selak.from.hr/assets/portfolio/favicon-16x16.png" sizes="16x16" />
+          <link rel="icon" href="https://cdn.tihomir-selak.from.hr/assets/portfolio/favicon.ico" />
           <meta name="twitter:card" content="summary_large_image" />
         </ Head>
         <body>

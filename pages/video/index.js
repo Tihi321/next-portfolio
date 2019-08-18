@@ -1,10 +1,12 @@
 import Navbar from '../../components/Navbar';
 import Head from '../../components/Head';
 
-export default () => {
+export default (props) => {
+
+  console.log(props);
   return (
     <>
-      <Head title="Tihomir Selak Portfolio" />
+      <Head title="Video Development" />
       <Navbar />
       <div>Video</div>
     </>
