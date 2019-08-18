@@ -1,0 +1,13 @@
+// Vendors - node modules
+@import 'normalize-scss';
+@include normalize(); // stylelint-disable-line at-rule-empty-line-before
+
+@import '~media-blender';
+@import 'eightshift-frontend-libs';
+
+// Project specific.
+@import 'utils/colors';
+@import 'utils/shared-variables';
+@import 'utils/z-index';
+
+@import './core';
