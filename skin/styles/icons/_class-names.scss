@@ -1,0 +1,5 @@
+.icon--hamburger-menu {
+  &::before {
+    content: unicode($icon--hamburger-menu);
+  }
+}
