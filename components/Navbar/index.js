@@ -1,11 +1,15 @@
 import React from 'react'
 import Link from 'next/link';
 
-import style from './Navbar.scss';
+import {
+  navBarClass,
+  hamburgerMenuClass,
+} from './Navbar.scss';
 
 const Navbar = () => {
   return (
-    <nav className={style.navbar}>
+    <nav className={navBarClass}>
+      <div className={hamburgerMenuClass}> </div>
       <ul>
         <li>
           <Link href="/">

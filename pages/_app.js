@@ -20,12 +20,11 @@ class MyApp extends App {
 
     let pageProps = {};
 
-    const dataUrl = 'https://blog.tihomir-selak.from.hr/?rest_route=/portfolio-backend/v1/portfolio-page';
+    const dataUrl = 'https://blog.tihomir-selak.from.hr/wp-json/portfolio-backend/v1/portfolio-page';
 
     const res = await fetch(dataUrl, options)
     const json = await res.json()
     pageProps.data = json;
-    pageProps.env = process.env;
     return { pageProps };
   }
 
