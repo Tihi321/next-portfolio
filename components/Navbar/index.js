@@ -6,10 +6,15 @@ import {
   hamburgerMenuClass,
 } from './Navbar.scss';
 
-const Navbar = () => {
+const Navbar = ({color, options}) => {
+
+  const style = {
+    backgroundColor: color,
+  };
+
   return (
     <nav className={navBarClass}>
-      <div className={hamburgerMenuClass}> </div>
+      <div className={hamburgerMenuClass} style={style}/>
       <ul>
         <li>
           <Link href="/">

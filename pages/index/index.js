@@ -1,25 +1,18 @@
-import Navbar from '../../components/Navbar';
 import Head from '../../components/Head';
 import TitleBar from '../../components/TitleBar';
 import Header from '../../components/Header';
 
-export default ({data}) => {
+export default (props) => {
   const {
-    aboutOptions: {
-      aboutAccentColor,
-      aboutAnimationFile,
-      aboutDescription,
-    },
-  } = data;
-  console.log(aboutAnimationFile);
+    aboutAccentColor,
+    aboutAnimationFile,
+    aboutDescription,
+  } = props;
+
   return (
     <>
       <Head title="About" />
-      <Navbar
-        color={aboutAccentColor}
-      />
       <Header
-        description={aboutDescription}
         animation={aboutAnimationFile}
       >
         <TitleBar
@@ -27,6 +20,10 @@ export default ({data}) => {
           color={aboutAccentColor}
         />
       </Header>
+      <div />
+      <div
+        dangerouslySetInnerHTML={{__html: aboutDescription}}
+      />
     </>
   );
 }

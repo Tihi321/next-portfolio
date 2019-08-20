@@ -13,6 +13,7 @@
   background-color: #000000;
 
   &::before {
-    content: unicode($icon--hamburger-menu);
+    content: unicode($icon--menu);
+    color: #ffffff;
   }
 }
