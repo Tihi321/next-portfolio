@@ -1,19 +1,78 @@
 @import '../../skin/styles/shared';
 
+$navbar-vars: (
+  text-color: $base-white-color,
+);
+
+:local(.modalClass) {
+  background: red;
+}
+
+.modalGlobal :global {
+  .modalClass {
+    color: map-get-strict($navbar-vars, 'text-color');
+    text-align: center;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: map-get-strict($zindex , 'menu-modal');
+    opacity: 0.99;
+    transition: transform 0.25s ease;
+    transform: translateY(-100%) translateZ(0);
+  }
+  
+  .modalActive {
+    transform: translateY(-0%) translateZ(0);
+  }
+
+}
+
 .navBarClass {
-  a {
-    color: green;
+  text-align: right;
+}
+
+.menuIconClass,
+.menuIconCloseClass {
+  @extend %font-icon;
+  @extend %button-reset;
+  background: none;
+  width: 50px;
+  height: 50px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menuIconClass {
+  &::before {
+    content: unicode($icon--menu);
+    color: map-get-strict($navbar-vars, 'text-color');
   }
 }
 
-.hamburgerMenuClass {
-  @extend %font-icon;
-  width: 50px;
-  height: 50px;
-  background-color: #000000;
-
+.menuIconCloseClass {
+  border: 2px solid map-get-strict($navbar-vars, 'text-color');
   &::before {
-    content: unicode($icon--menu);
-    color: #ffffff;
+    content: unicode($icon--close);
+    color: map-get-strict($navbar-vars, 'text-color');
   }
+}
+
+.menuClass {
+  flex: 1;
+  overflow: auto;
+}
+
+.titleClass {
+  font-weight: normal;
+}
+
+.menuItemClass {
+  text-decoration: none;
+  display: block;
+  color: map-get-strict($navbar-vars, 'text-color');
 }

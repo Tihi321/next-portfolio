@@ -34,3 +34,10 @@
     color: #fff;
   }
 }
+
+.icon--close {
+  &:before {
+    content: unicode($icon--close);     
+    color: #fff;
+  }
+}
