@@ -4,10 +4,6 @@ $navbar-vars: (
   text-color: $base-white-color,
 );
 
-:local(.modalClass) {
-  background: red;
-}
-
 .modalGlobal :global {
   .modalClass {
     color: map-get-strict($navbar-vars, 'text-color');
@@ -62,17 +58,11 @@ $navbar-vars: (
   }
 }
 
-.menuClass {
-  flex: 1;
-  overflow: auto;
-}
-
 .titleClass {
   font-weight: normal;
 }
 
-.menuItemClass {
-  text-decoration: none;
-  display: block;
-  color: map-get-strict($navbar-vars, 'text-color');
+.disclaimerClass {
+
 }
+

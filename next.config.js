@@ -45,22 +45,6 @@ module.exports = withSass({
     sourceMap: true
   },
   postcssLoaderOptions: {
-      sourceMap: true,
-      plugins: function() {
-        return [
-          require('postcss-cssnext')({
-            browsers: [
-              'last 2 version'
-            ],
-            features: {
-              rem: false,
-              customProperties: {
-                warnings: false,
-                preserve: true
-              }
-            }
-          })
-        ];
-      }
+      sourceMap: true
   }
 });

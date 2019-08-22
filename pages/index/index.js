@@ -2,6 +2,10 @@ import Head from '../../components/Head';
 import TitleBar from '../../components/TitleBar';
 import Header from '../../components/Header';
 
+import {
+  textClass,
+} from './style.scss';
+
 export default (props) => {
   const {
     aboutAccentColor,
@@ -20,8 +24,8 @@ export default (props) => {
           color={aboutAccentColor}
         />
       </Header>
-      <div />
       <div
+        className={textClass}
         dangerouslySetInnerHTML={{__html: aboutDescription}}
       />
     </>

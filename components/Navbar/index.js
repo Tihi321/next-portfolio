@@ -1,18 +1,19 @@
 import {useState} from 'react'
 import classNames from 'classnames';
-import Link from 'next/link';
+
+import Menu from './../Menu';
+import SocialBar from './../SocialBar';
 
 import {
   menuIconClass,
-  menuClass,
-  menuItemClass,
   navBarClass,
   menuIconCloseClass,
   modalGlobal,
   titleClass,
+  disclaimerClass,
 } from './Navbar.scss';
 
-const Navbar = ({color, options}) => {
+const Navbar = ({color, options, menuItems}) => {
 
   const [isActive, setIsActive] = useState(false);
 
@@ -41,22 +42,14 @@ const Navbar = ({color, options}) => {
         <h1 className={titleClass}>
           Tihomir Selak
         </h1>
-        <nav className={menuClass}>
-          <Link href="/">
-            <a className={menuItemClass} title="About me page">About</a>
-          </Link>
-          <Link href="web">
-            <a className={menuItemClass} title="Web projects page">Web</a>
-          </Link>
-          <Link href="video">
-            <a className={menuItemClass} title="Video production page">Video</a>
-          </Link>
-          <Link href="android">
-            <a className={menuItemClass} title="Android development projects page">Android</a>
-          </Link>
-        </nav>
-        <div className={navBarClass} onClick={setActiveToggle}>
-          <button className={menuIconCloseClass}/>
+        <Menu
+          items={menuItems}
+        />
+        <SocialBar
+          options={options}
+        />
+        <div className={disclaimerClass}>
+          NextJs Frontend, Wordpress Backend
         </div>
       </div>
     </div>

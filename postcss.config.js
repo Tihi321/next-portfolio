@@ -1,11 +1,10 @@
 const postcssFontMagician = require('postcss-font-magician');
-const autoPrefixer = require('autoprefixer');
+const postcssNext = require('postcss-cssnext');
 
 const fontsPath = `/static/fonts`;
 
 module.exports = {
   plugins: [
-    autoPrefixer,
     postcssFontMagician({
       custom: {
         'portfolio': {
@@ -34,6 +33,18 @@ module.exports = {
       },
       display: 'swap',
       foundries: [ 'custom', 'google' ],
+    }),
+    postcssNext({
+      browsers: [
+        'last 2 version'
+      ],
+      features: {
+        rem: false,
+        customProperties: {
+          warnings: false,
+          preserve: true
+        }
+      }
     })
   ]
 };

@@ -1,0 +1,56 @@
+@import '../../skin/styles/shared';
+
+$menu-vars: (
+  text-color: $base-white-color,
+);
+
+
+.menuClass {
+  flex: 1;
+  overflow: auto;
+}
+
+.menuItemClass {
+  position: relative;
+  text-decoration: none;
+  display: block;
+  color: map-get-strict($menu-vars, 'text-color');
+  padding: 10px 0;
+  box-shadow: 0 0 0 0 transparent;
+  transition: box-shadow 0.3s ease, opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.menuItemAndroid:hover {
+  box-shadow: 0 2px 0 0 var(--android);
+}
+
+.menuItemWeb:hover {
+  box-shadow: 0 2px 0 0 var(--web);
+}
+
+.menuItemVideo:hover {
+  box-shadow: 0 2px 0 0 var(--video);
+}
+
+.menuItemAbout:hover {
+  box-shadow: 0 2px 0 0 var(--about);
+}
+
+.menuItemClass:hover .menuItemBottomElement {
+  opacity: 1;
+}
+
+.menuItemBottomElement {
+  height: 2px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}

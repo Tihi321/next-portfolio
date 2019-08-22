@@ -29,6 +29,13 @@ class MyApp extends App {
     const json = await res.json();
 
     pageProps.props = json;
+    pageProps.colors = {
+      about: json.aboutOptions.aboutAccentColor,
+      android: json.androidOptions.androidAccentColor,
+      video: json.videoOptions.videoAccentColor,
+      web: json.webOptions.webAccentColor,
+    };
+    pageProps.menuItems = JSON.parse(json.generalOptions.menuItems);
     pageProps.date = format(new Date(), 'Y');
     return { pageProps };
   }
@@ -68,9 +75,18 @@ class MyApp extends App {
     const options = this.getColor(asPath, pageProps.props);
 
     return <>
+      <style jsx global>{`
+        :root {
+          --about: ${asPath !== '/' ? pageProps.colors.about : '#FFFFFF'};
+          --android: ${asPath !== '/android' ? pageProps.colors.android : '#FFFFFF'};
+          --video: ${asPath !== '/video' ? pageProps.colors.video : '#FFFFFF'};
+          --web: ${asPath !== '/web' ? pageProps.colors.web : '#FFFFFF'};
+        }
+      `}</style>
       <Navbar
         color={options.color}
-        options={pageProps.generalOptions}
+        menuItems={pageProps.menuItems}
+        options={pageProps.props.generalOptions}
       />
       <Component {...options.props} />
       <Footer

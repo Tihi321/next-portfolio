@@ -23,7 +23,7 @@ const Header = (props) => {
   } = JSON.parse(animation);
   const ext = generalHelper.getExtension(url);
 
-  const Element = () => {
+  const getElement = () => {
     switch (ext) {
       case 'mp4':
         return <VideoElement mediaUrl={url} />
@@ -43,7 +43,7 @@ const Header = (props) => {
     <header
       className={headerClass}
     >
-      <Element />
+      {getElement()}
       <div>
         {(description) && <Description description={description}/>}
       </div>
