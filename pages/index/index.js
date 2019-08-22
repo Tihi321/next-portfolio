@@ -8,7 +8,6 @@ import {
 
 export default (props) => {
   const {
-    aboutAccentColor,
     aboutAnimationFile,
     aboutDescription,
   } = props;
@@ -21,7 +20,6 @@ export default (props) => {
       >
         <TitleBar
           title="About"
-          color={aboutAccentColor}
         />
       </Header>
       <div

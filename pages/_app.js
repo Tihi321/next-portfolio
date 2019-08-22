@@ -77,21 +77,18 @@ class MyApp extends App {
     return <>
       <style jsx global>{`
         :root {
-          --about: ${asPath !== '/' ? pageProps.colors.about : '#FFFFFF'};
-          --android: ${asPath !== '/android' ? pageProps.colors.android : '#FFFFFF'};
-          --video: ${asPath !== '/video' ? pageProps.colors.video : '#FFFFFF'};
-          --web: ${asPath !== '/web' ? pageProps.colors.web : '#FFFFFF'};
+          --accent-color: ${options.color};
         }
       `}</style>
       <Navbar
-        color={options.color}
+        asPath={asPath}
+        colors={pageProps.colors}
         menuItems={pageProps.menuItems}
         options={pageProps.props.generalOptions}
       />
       <Component {...options.props} />
       <Footer
         date={pageProps.date}
-        color={options.color}
         options={pageProps.generalOptions}
       />
     </>;

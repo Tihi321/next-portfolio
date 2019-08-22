@@ -13,12 +13,15 @@ import {
   disclaimerClass,
 } from './Navbar.scss';
 
-const Navbar = ({color, options, menuItems}) => {
+const Navbar = ({options, menuItems, asPath, colors}) => {
 
   const [isActive, setIsActive] = useState(false);
 
   const style = {
-    backgroundColor: color,
+    '--about': asPath !== '/' ? colors.about : '#FFFFFF',
+    '--android': asPath !== '/android' ? colors.android : '#FFFFFF',
+    '--video': asPath !== '/video' ? colors.video : '#FFFFFF',
+    '--web': asPath !== '/web' ? colors.web : '#FFFFFF',
   };
 
   let modalClass = classNames({
@@ -33,7 +36,7 @@ const Navbar = ({color, options, menuItems}) => {
   return (
     <div className={modalGlobal}>
       <div className={navBarClass}>
-        <button className={menuIconClass} style={style} onClick={setActiveToggle}/>
+        <button className={menuIconClass} onClick={setActiveToggle}/>
       </div>
       <div className={modalClass} style={style}>
         <div className={navBarClass} onClick={setActiveToggle}>

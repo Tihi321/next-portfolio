@@ -4,7 +4,6 @@ import Header from '../../components/Header';
 
 export default (props) => {
   const {
-    androidAccentColor,
     androidAnimationFile,
     androidDescription,
   } = props;
@@ -18,7 +17,6 @@ export default (props) => {
       >
         <TitleBar
           title="Android Development"
-          color={androidAccentColor}
         />
       </Header>
     </>

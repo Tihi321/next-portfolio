@@ -4,15 +4,10 @@ import {
   footerClass,
 } from './footer.scss';
 
-const Footer = ({color, options, date}) => {
-
-  const style = {
-    backgroundColor: color,
-  };
-
+const Footer = ({options, date}) => {
+  
   return (
     <footer
-      style={style}
       className={footerClass}
     >
       <span>{`@ ${date} Tihomir Selak`}</span>

@@ -4,7 +4,6 @@ import Header from '../../components/Header';
 
 export default (props) => {
   const {
-    webAccentColor,
     webAnimationFile,
     webDescription,
   } = props;
@@ -18,7 +17,6 @@ export default (props) => {
       >
         <TitleBar
           title="Web Development"
-          color={webAccentColor}
         />
       </Header>
     </>

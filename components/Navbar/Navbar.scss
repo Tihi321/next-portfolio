@@ -6,6 +6,7 @@ $navbar-vars: (
 
 .modalGlobal :global {
   .modalClass {
+    background-color: var(--accent-color);
     color: map-get-strict($navbar-vars, 'text-color');
     text-align: center;
     position: fixed;
@@ -44,6 +45,8 @@ $navbar-vars: (
 }
 
 .menuIconClass {
+  background-color: var(--accent-color);
+
   &::before {
     content: unicode($icon--menu);
     color: map-get-strict($navbar-vars, 'text-color');

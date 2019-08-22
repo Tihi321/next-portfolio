@@ -4,7 +4,6 @@ import Header from '../../components/Header';
 
 export default (props) => {
   const {
-    videoAccentColor,
     videoAnimationFile,
     videoDescription,
   } = props;
@@ -18,7 +17,6 @@ export default (props) => {
       >
         <TitleBar
           title="Video Production"
-          color={videoAccentColor}
         />
       </Header>
     </>
