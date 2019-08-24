@@ -1,13 +1,13 @@
-import Cors from 'micro-cors';
-import { posts } from '../data/posts';
+import corsModule from 'micro-cors';
+import {posts} from '../data/posts';
 
-const cors = Cors({
+const cors = corsModule({
   allowedMethods: ['GET'],
 });
 
 function Endpoint(req, res) {
   const {
-    query: { pid },
+    query: {pid},
   } = req;
 
   const post = posts.filter((item) => `${item.id}` === pid);

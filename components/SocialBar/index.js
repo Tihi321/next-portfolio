@@ -1,3 +1,4 @@
+import React from 'react';
 import classNames from 'classnames/bind';
 
 import scss, {
@@ -7,7 +8,7 @@ import scss, {
   socialYoutubeIcon,
   socialGooglePlayIcon,
   socialGithubIcon,
-  socialIconClass
+  socialIconClass,
 } from './style.scss';
 
 const styles = classNames.bind(scss);

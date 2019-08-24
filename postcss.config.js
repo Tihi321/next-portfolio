@@ -22,13 +22,13 @@ module.exports = {
         },
       },
       variants: {
-        'Open Sans Condensed': {
+        'Karla': {
           400: ['woff2', 'woff'],
-          800: ['woff2', 'woff'],
+          700: ['woff2', 'woff'],
         },
-        'Open Sans': {
+        'Rubik': {
           400: ['woff2', 'woff'],
-          800: ['woff2', 'woff'],
+          700: ['woff2', 'woff'],
         },
       },
       display: 'swap',

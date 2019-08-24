@@ -1,3 +1,4 @@
+import React from 'react';
 import Head from '../../components/Head';
 import TitleBar from '../../components/TitleBar';
 import Header from '../../components/Header';
@@ -6,7 +7,7 @@ import {
   textClass,
 } from './style.scss';
 
-export default (props) => {
+const Index = (props) => {
   const {
     aboutAnimationFile,
     aboutDescription,
@@ -29,4 +30,6 @@ export default (props) => {
       />
     </>
   );
-}
+};
+
+export default Index;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 import Description from '../Description';
 import VideoElement from '../VideoElement';
@@ -29,18 +29,19 @@ const Header = (props) => {
 
   const getElement = () => {
     switch (ext) {
-      case 'mp4':
-        return <VideoElement mediaUrl={url} />
-      case 'json':
-        return <LottieElement mediaUrl={url} />
-      case 'jpg':
-      case 'png':
-      case 'svg':
-        return <ImageElement mediaUrl={url} mediaAlt={title} />
-    
-      default:
-        break;
+    case 'mp4':
+      return <VideoElement mediaUrl={url} />;
+    case 'json':
+      return <LottieElement mediaUrl={url} />;
+    case 'jpg':
+    case 'png':
+    case 'svg':
+      return <ImageElement mediaUrl={url} mediaAlt={title} />;
+  
+    default:
+      break;
     }
+    return '';
   };
 
   return (
@@ -49,11 +50,11 @@ const Header = (props) => {
     >
       <div className={heroClass}>
         {getElement()}
-          {(description) && <div className={descriptionClass}>
-            <Container>
-              <Description description={description}/>
-            </Container>
-          </div>}
+        {(description) && <div className={descriptionClass}>
+          <Container>
+            <Description description={description}/>
+          </Container>
+        </div>}
       </div>
       <div className={bottomBarClass}>
         {children}

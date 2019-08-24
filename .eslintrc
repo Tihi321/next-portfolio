@@ -1,0 +1,33 @@
+
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "commonjs": true
+  },
+  "extends": ["plugin:react/recommended", "@infinumjs"],
+  "parserOptions": {
+    "ecmaVersion": 9,
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "globals": {
+		"wp": true,
+		"wpApiSettings": true,
+		"window": true,
+		"document": true,
+		"$": true
+	},
+  "plugins": ["react"],
+  "rules": {
+    "indent": ["error", 2, {
+      "ignoredNodes": ["TemplateLiteral"]
+    }],
+    "arrow-body-style": 0,
+    "react/prop-types": 0,
+    "react/jsx-uses-vars": [2],
+    "no-console": 0
+  }
+}

@@ -1,8 +1,9 @@
+import React from 'react';
 import Head from '../../components/Head';
 import TitleBar from '../../components/TitleBar';
 import Header from '../../components/Header';
 
-export default (props) => {
+const Android = (props) => {
   const {
     androidAnimationFile,
     androidDescription,
@@ -21,4 +22,6 @@ export default (props) => {
       </Header>
     </>
   );
-}
+};
+
+export default Android;

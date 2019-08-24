@@ -1,3 +1,4 @@
+import React from 'react';
 import Link from 'next/link';
 import classNames from 'classnames/bind';
 
@@ -20,9 +21,9 @@ const Menu = ({items}) => {
     return (
       <a key={id} className={menuItemClass} href={item.link} title="Android development projects page">
         {item.title}
-        <span className={menuItemBottomElement} style={{ backgroundColor: item.color }}></span>
+        <span className={menuItemBottomElement} style={{backgroundColor: item.color}}></span>
       </a>
-    )
+    );
   }) : '';
 
   return (

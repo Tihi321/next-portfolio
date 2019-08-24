@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import React, {useState} from 'react';
 import classNames from 'classnames';
 
 import Menu from './../Menu';
@@ -13,7 +13,12 @@ import {
   disclaimerClass,
 } from './style.scss';
 
-const Navbar = ({options, menuItems, asPath, colors}) => {
+const Navbar = ({
+  options,
+  menuItems,
+  asPath,
+  colors,
+}) => {
 
   const [isActive, setIsActive] = useState(false);
 
@@ -24,14 +29,14 @@ const Navbar = ({options, menuItems, asPath, colors}) => {
     '--web': asPath !== '/web' ? colors.web : '#FFFFFF',
   };
 
-  let modalClass = classNames({
+  const modalClass = classNames({
     modalClass: true,
     modalActive: isActive,
   });
 
   const setActiveToggle = () => {
-    setIsActive(() => !isActive );
-  }
+    setIsActive(() => !isActive);
+  };
 
   return (
     <div className={modalGlobal}>

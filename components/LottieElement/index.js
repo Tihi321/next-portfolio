@@ -1,3 +1,4 @@
+import React from 'react';
 import LottieControl from './LottieControl';
 
 const LottieElement = (props) => {
@@ -10,7 +11,7 @@ const LottieElement = (props) => {
   } = props;
 
 
-  return(
+  return (
     <LottieControl
       mediaUrl={mediaUrl}
       autoplay={autoplay}
@@ -18,7 +19,7 @@ const LottieElement = (props) => {
       controls={controls}
       className={className}
     />
-  )
+  );
 };
 
 export default LottieElement;

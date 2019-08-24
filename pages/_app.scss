@@ -2,6 +2,8 @@
 @include normalize(); // stylelint-disable-line at-rule-empty-line-before
 
 @import 'eightshift-frontend-libs';
+@import '../skin//styles/utils/shared-variables';
+@import '../skin//styles/utils/colors';
 
 html {
   font-size: $base-font-size;

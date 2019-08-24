@@ -1,7 +1,7 @@
 class GeneralHelper {
 
   getExtension(string) {
-    return (string.match(/\.([^.]*?)(?=\?|#|$)/) || [])[1] ;
+    return (string.match(/\.([^.]*?)(?=\?|#|$)/) || [])[1];
   }
 
 }

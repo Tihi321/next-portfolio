@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {
   descriptionClass,
 } from './style.scss';
