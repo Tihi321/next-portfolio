@@ -1,4 +1,4 @@
-const MediaElement = (props) => {
+const ImageElement = (props) => {
   const {
     mediaAlt,
     mediaUrl,
@@ -11,4 +11,4 @@ const MediaElement = (props) => {
   );
 };
 
-export default MediaElement;
+export default ImageElement;
