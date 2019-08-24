@@ -17,6 +17,7 @@ export default (props) => {
       <Head title="About" />
       <Header
         animation={aboutAnimationFile}
+        description={aboutDescription}
       >
         <TitleBar
           title="About"

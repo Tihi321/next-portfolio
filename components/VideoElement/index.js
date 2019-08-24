@@ -1,12 +1,17 @@
+import {
+  videoElementClass,
+  videoClass,
+} from './style.scss';
+
 const VideoElement = (props) => {
   const {
     mediaUrl,
   } = props;
 
   return (
-    <figure className="video-element">
+    <figure className={videoElementClass}>
       <video
-        className="media-video-class"
+        className={videoClass}
         controls={false}
         muted={true}
         autoPlay={true}

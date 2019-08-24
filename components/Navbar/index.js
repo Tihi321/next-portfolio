@@ -11,7 +11,7 @@ import {
   modalGlobal,
   titleClass,
   disclaimerClass,
-} from './Navbar.scss';
+} from './style.scss';
 
 const Navbar = ({options, menuItems, asPath, colors}) => {
 
@@ -35,6 +35,11 @@ const Navbar = ({options, menuItems, asPath, colors}) => {
 
   return (
     <div className={modalGlobal}>
+      {(isActive) && <style jsx global>{`
+        :root {
+          overflow: hidden;
+        }
+      `}</style>}
       <div className={navBarClass}>
         <button className={menuIconClass} onClick={setActiveToggle}/>
       </div>

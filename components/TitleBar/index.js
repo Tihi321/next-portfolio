@@ -1,8 +1,9 @@
 import React from 'react'
+import Container from '../Container';
 
 import {
   titleBarClass,
-} from './TitleBar.scss';
+} from './style.scss';
 
 const TitleBar = (props) => {
   const {
@@ -13,7 +14,9 @@ const TitleBar = (props) => {
     <h1
       className={titleBarClass}
     >
-      {title}
+      <Container>
+        {title}
+      </Container>
     </h1>
   );
 };

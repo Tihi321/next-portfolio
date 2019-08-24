@@ -8,7 +8,7 @@ import scss, {
   socialGooglePlayIcon,
   socialGithubIcon,
   socialIconClass
-} from './SocialBar.scss';
+} from './style.scss';
 
 const styles = classNames.bind(scss);
 

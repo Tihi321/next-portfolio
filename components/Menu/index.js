@@ -9,7 +9,7 @@ import scss, {
   menuItemAndroid,
   menuItemVideo,
   menuItemWeb,
-} from './Menu.scss';
+} from './style.scss';
 
 const styles = classNames.bind(scss);
 

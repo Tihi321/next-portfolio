@@ -2,7 +2,7 @@ import React from 'react'
 
 import {
   footerClass,
-} from './footer.scss';
+} from './style.scss';
 
 const Footer = ({options, date}) => {
   

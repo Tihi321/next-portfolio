@@ -1,9 +1,8 @@
-import React from 'react'
+import React from 'react';
 
 import {
-  backDropClass,
   descriptionClass,
-} from './Description.scss';
+} from './style.scss';
 
 const Description = (props) => {
   const {
@@ -12,13 +11,9 @@ const Description = (props) => {
 
   return (
     <div
-      className={backDropClass}
-    >
-      <div
-        dangerouslySetInnerHTML={{__html: description}}
-        className={descriptionClass}
-      />
-    </div>
+      dangerouslySetInnerHTML={{__html: description}}
+      className={descriptionClass}
+    />
   );
 };
 

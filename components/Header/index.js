@@ -3,12 +3,16 @@ import React from 'react'
 import Description from '../Description';
 import VideoElement from '../VideoElement';
 import LottieElement from '../LottieElement';
-import MediaElement from '../MediaElement';
+import ImageElement from '../ImageElement';
+import Container from '../Container';
 import generalHelper from '../../halpers/general-helper';
 
 import {
   headerClass,
-} from './Header.scss';
+  heroClass,
+  descriptionClass,
+  bottomBarClass,
+} from './style.scss';
 
 const Header = (props) => {
   const {
@@ -32,7 +36,7 @@ const Header = (props) => {
       case 'jpg':
       case 'png':
       case 'svg':
-        return <MediaElement mediaUrl={url} mediaAlt={title} />
+        return <ImageElement mediaUrl={url} mediaAlt={title} />
     
       default:
         break;
@@ -43,11 +47,17 @@ const Header = (props) => {
     <header
       className={headerClass}
     >
-      {getElement()}
-      <div>
-        {(description) && <Description description={description}/>}
+      <div className={heroClass}>
+        {getElement()}
+          {(description) && <div className={descriptionClass}>
+            <Container>
+              <Description description={description}/>
+            </Container>
+          </div>}
       </div>
-      {children}
+      <div className={bottomBarClass}>
+        {children}
+      </div>
     </header>
   );
 };
