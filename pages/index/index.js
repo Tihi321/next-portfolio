@@ -4,10 +4,6 @@ import TitleBar from '../../components/TitleBar';
 import Header from '../../components/Header';
 import Body from '../../components/Body';
 
-import {
-  textClass,
-} from './style.scss';
-
 const Index = (props) => {
   const {
     aboutAnimationFile,
@@ -19,7 +15,6 @@ const Index = (props) => {
       <Head title="About" />
       <Header
         animation={aboutAnimationFile}
-        description={aboutDescription}
       >
         <TitleBar
           title="About"
@@ -27,7 +22,6 @@ const Index = (props) => {
       </Header>
       <Body>
         <div
-          className={textClass}
           dangerouslySetInnerHTML={{__html: aboutDescription}}
         />
       </Body>
