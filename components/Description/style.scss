@@ -1,6 +1,7 @@
 @import '../../skin/styles/shared';
 
 $desc-vars: (
+  outline-color: $base-white-color,
   color: $base-white-color,
   sizes: (
     mobile: (
@@ -18,8 +19,20 @@ $desc-vars: (
   color: map-get-strict($desc-vars, 'color');
 
   a {
+    display: inline-block;
+    padding: 0 5px;
     color: map-get-strict($desc-vars, 'color');
     text-decoration: none;
-    box-shadow: 0 2px 0 0 var(--accent-color);
+    background-color: var(--accent-color);
+    transition: opacity 0.3s ease;
+
+    &:focus {
+      outline: 1px solid map-get-strict($desc-vars, 'outline-color');
+    }
+
+    &:hover {
+      opacity: 0.9;
+    }
+
   }
 }

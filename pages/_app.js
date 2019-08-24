@@ -10,7 +10,7 @@ const https = require('https');
 
 class MyApp extends App {
   static async getInitialProps() {
-  
+
     // enable self signed ceriticate api call for development.
     const development = process.env.NEXT_ENV === 'development';
 
@@ -91,7 +91,10 @@ class MyApp extends App {
           options={pageProps.props.generalOptions}
         />
         <Component {...options.props} />
-        <Footer date={pageProps.date} options={pageProps.generalOptions} />
+        <Footer
+          date={pageProps.date}
+          options={pageProps.props.generalOptions}
+        />
       </>
     );
   }

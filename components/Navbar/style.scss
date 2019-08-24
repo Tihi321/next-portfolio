@@ -1,6 +1,7 @@
 @import '../../skin/styles/shared';
 
 $navbar-vars: (
+  outline-color: $base-white-color,
   text-color: $base-white-color,
   title: (
     font-family: $secondary-font-family,
@@ -12,7 +13,7 @@ $navbar-vars: (
       tablet: (
         font-size: 64px,
       ),
-    )
+    ),
   ),
   z-index: (
     modal: 3,
@@ -33,23 +34,22 @@ $navbar-vars: (
     width: 100vw;
     height: 100vh;
     padding: 20px;
-    z-index: map-get-deep($navbar-vars , 'z-index', 'modal');
+    z-index: map-get-deep($navbar-vars, 'z-index', 'modal');
     opacity: 0.99;
     transition: transform 0.25s ease;
     transform: translateY(-100%) translateZ(0);
   }
-  
+
   .modalActive {
     transform: translateY(-0%) translateZ(0);
   }
-
 }
 
 .navBarClass {
   position: fixed;
   top: 0;
   right: 0;
-  z-index: map-get-deep($navbar-vars , 'z-index', 'nav-bar');
+  z-index: map-get-deep($navbar-vars, 'z-index', 'nav-bar');
 }
 
 .menuIconClass,
@@ -59,10 +59,21 @@ $navbar-vars: (
   background: none;
   width: 50px;
   height: 50px;
+  margin: 5px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  font-weight: bold;
+
+  &:focus {
+    outline: 1px solid map-get-strict($navbar-vars, 'outline-color');
+  }
+
+  &:hover {
+    box-shadow: 0 0 0 1px inset map-get-strict($navbar-vars, 'outline-color');
+  }
 }
 
 .menuIconClass {
@@ -75,7 +86,6 @@ $navbar-vars: (
 }
 
 .menuIconCloseClass {
-  border: 2px solid map-get-strict($navbar-vars, 'text-color');
   &::before {
     content: unicode($icon--close);
     color: map-get-strict($navbar-vars, 'text-color');
@@ -89,6 +99,5 @@ $navbar-vars: (
 }
 
 .disclaimerClass {
-
+  padding-top: 10px;
 }
-

@@ -14,11 +14,8 @@
     "sourceType": "module"
   },
   "globals": {
-		"wp": true,
-		"wpApiSettings": true,
 		"window": true,
-		"document": true,
-		"$": true
+		"document": true
 	},
   "plugins": ["react"],
   "rules": {

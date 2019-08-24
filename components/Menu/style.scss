@@ -1,17 +1,23 @@
 @import '../../skin/styles/shared';
 
 $menu-vars: (
+  outline-color: $base-white-color,
   text-color: $base-white-color,
   font-family: $secondary-font-family,
+  text-shadow: rgba(0, 0, 0, 0.4),
 );
 
 
 .menuClass {
   flex: 1;
-  overflow: auto;
+  overflow: visible;
+  width: 100%;
+  max-width: 300px;
+  align-self: center;
 }
 
 .menuItemClass {
+  overflow: hidden;
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
@@ -20,41 +26,47 @@ $menu-vars: (
   color: map-get-strict($menu-vars, 'text-color');
   font-family: map-get-strict($menu-vars, 'font-family');
   padding: 10px 0;
-  box-shadow: 0 0 0 0 transparent;
-  transition: box-shadow 0.3s ease, opacity 0.3s ease;
+
+  &:focus {
+    outline: 1px solid map-get-strict($menu-vars, 'outline-color');
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color);
+    transition: transform 0.2s ease;
+    transform: translateY(100%);
+  }
 
   &:hover {
-    opacity: 0.8;
+    &::after {
+      transform: translateX(0);
+    }
   }
 }
 
-.menuItemAndroid:hover {
-  box-shadow: 0 2px 0 0 var(--android);
-}
+.activeMenuItem {
+  color: map-get-strict($menu-vars, 'text-color');
+  text-shadow: 2px 2px 2px map-get-strict($menu-vars, 'text-shadow');
+  transition: color 0.2s ease, text-shadow 0.3s ease;
 
-.menuItemWeb:hover {
-  box-shadow: 0 2px 0 0 var(--web);
-}
+  &:hover {
+    color: var(--color);
+    text-shadow: 0 0 0 transparent;
 
-.menuItemVideo:hover {
-  box-shadow: 0 2px 0 0 var(--video);
-}
+    &::after {
+      transform: translateX(0);
+    }
+  }
 
-.menuItemAbout:hover {
-  box-shadow: 0 2px 0 0 var(--about);
-}
-
-.menuItemClass:hover .menuItemBottomElement {
-  opacity: 1;
-}
-
-.menuItemBottomElement {
-  height: 2px;
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  &::after {
+    background-color: map-get-strict($menu-vars, 'outline-color');
+  }
 }

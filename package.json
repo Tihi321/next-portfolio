@@ -25,6 +25,8 @@
     "postcss-easy-import": "^3.0.0",
     "postcss-font-magician": "^2.2.2",
     "postcss-loader": "^3.0.0",
+    "prettier-eslint": "^9.0.0",
+    "prettier-stylelint": "^0.4.2",
     "prop-types": "^15.7.2",
     "raw-loader": "^3.1.0",
     "react": "^16.9.0",

@@ -22,13 +22,6 @@ const Navbar = ({
 
   const [isActive, setIsActive] = useState(false);
 
-  const style = {
-    '--about': asPath !== '/' ? colors.about : '#FFFFFF',
-    '--android': asPath !== '/android' ? colors.android : '#FFFFFF',
-    '--video': asPath !== '/video' ? colors.video : '#FFFFFF',
-    '--web': asPath !== '/web' ? colors.web : '#FFFFFF',
-  };
-
   const modalClass = classNames({
     modalClass: true,
     modalActive: isActive,
@@ -48,7 +41,7 @@ const Navbar = ({
       <div className={navBarClass}>
         <button className={menuIconClass} onClick={setActiveToggle}/>
       </div>
-      <div className={modalClass} style={style}>
+      <div className={modalClass}>
         <div className={navBarClass} onClick={setActiveToggle}>
           <button className={menuIconCloseClass}/>
         </div>
@@ -56,6 +49,8 @@ const Navbar = ({
           Tihomir Selak
         </h1>
         <Menu
+          path={asPath}
+          colors={colors}
           items={menuItems}
         />
         <SocialBar

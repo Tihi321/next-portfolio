@@ -1,6 +1,7 @@
 @import '../../skin/styles/shared';
 
 $social-vars: (
+  outline-color: $base-white-color,
   text: (
     color: $base-white-color,
     sizes: (
@@ -14,12 +15,14 @@ $social-vars: (
     ),
   ),
 );
+
 .socialBarClass {
   text-align: center;
 }
 
 .socialIconClass {
   @include responsive-deep($social-vars, 'text', 'sizes');
+
   @extend %font-icon;
   @extend %button-reset;
   background: none;
@@ -34,6 +37,10 @@ $social-vars: (
 
   &::before {
     color: map-get-deep($social-vars, 'text', 'color');
+  }
+
+  &:focus {
+    outline: 1px solid map-get-strict($social-vars, 'outline-color');
   }
 
   &:hover {

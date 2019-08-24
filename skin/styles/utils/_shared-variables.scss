@@ -14,57 +14,9 @@ $media-breakpoints: (
 
 //Base
 $base-font-family: 'Karla', Arial, sans-serif;
-$secondary-font-family: 'Rubik', sans-serif;;
+$secondary-font-family: 'Rubik', sans-serif;
 $base-icons-font-family: 'portfolio';
 
 // Container
 $base-container-size: 1024px;
 $base-gutter-size: 24px;
-
-$typography-map-default: (
-  mobile: (
-    huge: (
-      size: 36px,
-      line-height: 1.25,
-    ),
-    big: (
-      size: 36px,
-      line-height: 1.25,
-    ),
-    larger: (
-      size: 32px,
-      line-height: 1.25,
-    ),
-    large: (
-      size: 24px,
-      line-height: 1.5,
-    ),
-    default: (
-      size: 18px,
-      line-height: 1.5,
-    ),
-  ),
-  tablet: (
-    huge: (
-      size: 96px,
-      line-height: 1.25,
-    ),
-    big: (
-      size: 48px,
-      line-height: 1.25,
-    ),
-    larger: (
-      size: 32px,
-      line-height: 1.25,
-    ),
-    large: (
-      size: 24px,
-      line-height: 1.5,
-    ),
-    default: (
-      size: 18px,
-      line-height: 1.5,
-    ),
-  ),
-);
-
