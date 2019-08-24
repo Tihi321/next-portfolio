@@ -2,6 +2,23 @@
 
 $navbar-vars: (
   text-color: $base-white-color,
+  title: (
+    font-family: $secondary-font-family,
+    sizes: (
+      mobile: (
+        font-size: 36px,
+        line-height: 1.25,
+      ),
+      tablet: (
+        font-size: 64px,
+      ),
+    )
+  ),
+  z-index: (
+    modal: 3,
+    nav-bar: 2,
+  ),
+  nav-bar-index: 2,
 );
 
 .modalGlobal :global {
@@ -10,12 +27,13 @@ $navbar-vars: (
     color: map-get-strict($navbar-vars, 'text-color');
     text-align: center;
     position: fixed;
+    top: 0;
     display: flex;
     flex-direction: column;
-    top: 0;
     width: 100vw;
     height: 100vh;
-    z-index: map-get-strict($zindex , 'menu-modal');
+    padding: 20px;
+    z-index: map-get-deep($navbar-vars , 'z-index', 'modal');
     opacity: 0.99;
     transition: transform 0.25s ease;
     transform: translateY(-100%) translateZ(0);
@@ -28,7 +46,10 @@ $navbar-vars: (
 }
 
 .navBarClass {
-  text-align: right;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: map-get-deep($navbar-vars , 'z-index', 'nav-bar');
 }
 
 .menuIconClass,
@@ -62,7 +83,9 @@ $navbar-vars: (
 }
 
 .titleClass {
+  @include responsive-deep($navbar-vars, 'title', 'sizes');
   font-weight: normal;
+  font-family: map-get-deep($navbar-vars, 'title', 'font-family');
 }
 
 .disclaimerClass {

@@ -1,0 +1,13 @@
+@import '../../skin/styles/shared';
+
+$container-vars: (
+  width: $base-container-size,
+  gutter: $base-gutter-size,
+);
+
+.containerClass {
+  max-width: map-get-strict($container-vars, 'width');
+  padding-left: map-get-strict($container-vars, 'gutter');
+  padding-right: map-get-strict($container-vars, 'gutter');
+  margin: 0 auto;
+}

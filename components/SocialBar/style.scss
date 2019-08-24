@@ -1,14 +1,25 @@
 @import '../../skin/styles/shared';
 
 $social-vars: (
-  text-color: $base-white-color,
-  font-size: 40px,
+  text: (
+    color: $base-white-color,
+    sizes: (
+      mobile: (
+        font-size: 36px,
+        line-height: 1.25,
+      ),
+      tablet: (
+        font-size: 40px,
+      ),
+    ),
+  ),
 );
 .socialBarClass {
   text-align: center;
 }
 
 .socialIconClass {
+  @include responsive-deep($social-vars, 'text', 'sizes');
   @extend %font-icon;
   @extend %button-reset;
   background: none;
@@ -18,9 +29,12 @@ $social-vars: (
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  font-size: map-get-strict($social-vars, 'font-size');
   text-decoration: none;
   transition: opacity 0.3s ease;
+
+  &::before {
+    color: map-get-deep($social-vars, 'text', 'color');
+  }
 
   &:hover {
     opacity: 0.8;
@@ -30,34 +44,29 @@ $social-vars: (
 .socialMailIcon {
   &::before {
     content: unicode($icon--message);
-    color: map-get-strict($social-vars, 'text-color');
   }
 }
 
 .socialLinkedinIcon {
   &::before {
     content: unicode($icon--linkedin);
-    color: map-get-strict($social-vars, 'text-color');
   }
 }
 
 .socialYoutubeIcon {
   &::before {
     content: unicode($icon--youtube);
-    color: map-get-strict($social-vars, 'text-color');
   }
 }
 
 .socialGooglePlayIcon {
   &::before {
     content: unicode($icon--google-play);
-    color: map-get-strict($social-vars, 'text-color');
   }
 }
 
 .socialGithubIcon {
   &::before {
     content: unicode($icon--github);
-    color: map-get-strict($social-vars, 'text-color');
   }
 }

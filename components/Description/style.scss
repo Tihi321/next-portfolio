@@ -1,0 +1,25 @@
+@import '../../skin/styles/shared';
+
+$desc-vars: (
+  color: $base-white-color,
+  sizes: (
+    mobile: (
+      font-size: 18px,
+      line-height: 1.25,
+    ),
+    tablet: (
+      font-size: 24px,
+    ),
+  )
+);
+
+.descriptionClass {
+  @include responsive($desc-vars, 'sizes');
+  color: map-get-strict($desc-vars, 'color');
+
+  a {
+    color: map-get-strict($desc-vars, 'color');
+    text-decoration: none;
+    box-shadow: 0 2px 0 0 var(--accent-color);
+  }
+}

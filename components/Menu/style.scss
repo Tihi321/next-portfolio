@@ -2,6 +2,7 @@
 
 $menu-vars: (
   text-color: $base-white-color,
+  font-family: $secondary-font-family,
 );
 
 
@@ -13,8 +14,11 @@ $menu-vars: (
 .menuItemClass {
   position: relative;
   text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
   display: block;
   color: map-get-strict($menu-vars, 'text-color');
+  font-family: map-get-strict($menu-vars, 'font-family');
   padding: 10px 0;
   box-shadow: 0 0 0 0 transparent;
   transition: box-shadow 0.3s ease, opacity 0.3s ease;
