@@ -9,8 +9,7 @@ https://github.com/infinum/eightshift-frontend-libs/blob/develop/scss/_core.scss
 $media-breakpoints: (
   mobile: 0 767,
   tablet: 768 991,
-  desktop: 992 1199,
-  large: 1200
+  desktop: 992
 );
 
 //Base
@@ -19,24 +18,21 @@ $secondary-font-family: 'Open Sans Condensed', Arial, sans-serif;
 $base-icons-font-family: 'portfolio';
 
 // Container
-$base-container-size: 1250px;
+$base-container-size: 1024px;
 $base-gutter-size: 24px;
-
-$base-col-number: 12;
-
-$container-map: (
-  default: 1330px,
-  medium: 1110px,
-);
 
 $typography-map-default: (
   mobile: (
+    huge: (
+      size: 36px,
+      line-height: 1.25,
+    ),
     big: (
       size: 36px,
       line-height: 1.25,
     ),
     larger: (
-      size: 36px,
+      size: 32px,
       line-height: 1.25,
     ),
     large: (
@@ -47,22 +43,18 @@ $typography-map-default: (
       size: 18px,
       line-height: 1.5,
     ),
-    medium: (
-      size: 12px,
-      line-height: 1.86,
-    ),
-    small: (
-      size: 12px,
-      line-height: 2.25,
-    ),
   ),
   tablet: (
+    huge: (
+      size: 96px,
+      line-height: 1.25,
+    ),
     big: (
       size: 48px,
       line-height: 1.25,
     ),
     larger: (
-      size: 36px,
+      size: 32px,
       line-height: 1.25,
     ),
     large: (
@@ -73,17 +65,6 @@ $typography-map-default: (
       size: 18px,
       line-height: 1.5,
     ),
-    medium: (
-      size: 14px,
-      line-height: 1.86,
-    ),
-    small: (
-      size: 12px,
-      line-height: 2.25,
-    ),
   ),
 );
 
-$link-map: (
-  link: $base-primary-color,
-);

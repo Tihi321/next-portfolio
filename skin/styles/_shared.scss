@@ -5,12 +5,12 @@
 // Project specific.
 @import 'utils/colors';
 @import 'utils/shared-variables';
-@import 'utils/z-index';
 @import 'utils/functions';
 @import 'utils/placeholders';
 
 // mixins.
 @import 'utils/mixins/animations';
+@import 'utils/mixins/responsive-deep';
 
 // icons.
 @import 'icons/icons';
