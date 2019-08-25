@@ -14,10 +14,10 @@ const VideoElement = (props) => {
       <video
         className={videoClass}
         controls={false}
-        muted={true}
-        autoPlay={true}
+        muted
+        autoPlay
       >
-        <source src={mediaUrl} type="video/mp4"/>
+        <source src={mediaUrl} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </figure>

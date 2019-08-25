@@ -16,7 +16,7 @@ class MyDocument extends Document {
           <link rel="icon" type="image/png" href="https://cdn.tihomir-selak.from.hr/assets/portfolio/favicon-16x16.png" sizes="16x16" />
           <link rel="icon" href="https://cdn.tihomir-selak.from.hr/assets/portfolio/favicon.ico" />
           <meta name="twitter:card" content="summary_large_image" />
-        </ Head>
+        </Head>
         <body>
           <Main />
           <NextScript />

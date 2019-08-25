@@ -1,5 +1,5 @@
+import React, {useState, useEffect} from 'react';
 import Lottie from 'react-lottie';
-import {useState, useEffect} from 'react';
 
 const LottieControl = (props) => {
   const {
@@ -16,16 +16,16 @@ const LottieControl = (props) => {
   useEffect(() => {
     const fetchData = () => {
       fetch(props.mediaUrl)
-      .then((response) => {
-        return response.json();
-      })
-      .then((response) => {
-        setData(response);
-        setLoaded(true);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+        .then((response) => {
+          return response.json();
+        })
+        .then((response) => {
+          setData(response);
+          setLoaded(true);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     };
 
     fetchData();
@@ -34,8 +34,8 @@ const LottieControl = (props) => {
 
   const renderLottie = () => {
     const defaultOptions = {
-      loop: loop,
-      autoplay: autoplay,
+      loop,
+      autoplay,
       animationData: data,
       rendererSettings: {
         preserveAspectRatio: 'none',
@@ -67,13 +67,13 @@ const LottieControl = (props) => {
         />
       </div>
     );
-  }
+  };
 
   if (loaded) {
     return renderLottie();
   }
   return <div>Loading</div>;
-}
+};
 
 
 export default LottieControl;

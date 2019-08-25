@@ -7,24 +7,30 @@ const defaultOGURL = '';
 const defaultOGImage = '';
 
 const Head = (props) => {
-  const title = (props.title) ? `Tihomir Selak Portfolio || ${props.title}` : 'Tihomir Selak Portfolio';
+  const {
+    title,
+    description,
+    url,
+    ogImage,
+  } = props;
+  const pageTitle = (title) ? `Tihomir Selak Portfolio || ${title}` : 'Tihomir Selak Portfolio';
 
   return (
     <NextHead>
-      <title>{title}</title>
+      <title>{pageTitle}</title>
       <meta
         name="description"
-        content={props.description || defaultDescription}
+        content={description || defaultDescription}
       />
-      <meta property="og:url" content={props.url || defaultOGURL} />
-      <meta property="og:title" content={title} />
-      <meta property="og:image" content={props.ogImage || defaultOGImage} />
+      <meta property="og:url" content={url || defaultOGURL} />
+      <meta property="og:title" content={pageTitle} />
+      <meta property="og:image" content={ogImage || defaultOGImage} />
       <meta
         property="og:description"
-        content={props.description || defaultDescription}
+        content={description || defaultDescription}
       />
-      <meta name="twitter:site" content={props.url || defaultOGURL} />
-      <meta name="twitter:image" content={props.ogImage || defaultOGImage} />
+      <meta name="twitter:site" content={url || defaultOGURL} />
+      <meta name="twitter:image" content={ogImage || defaultOGImage} />
     </NextHead>
   );
 };
@@ -34,6 +40,13 @@ Head.propTypes = {
   description: string,
   url: string,
   ogImage: string,
+};
+
+Head.defaultProps = {
+  title: '',
+  description: 'Tihomir Selak portfolio site',
+  url: '',
+  ogImage: '',
 };
 
 export default Head;

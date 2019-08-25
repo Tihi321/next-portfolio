@@ -50,11 +50,14 @@ const Header = (props) => {
     >
       <div className={heroClass}>
         {getElement()}
-        {(description) && <div className={descriptionClass}>
-          <Container>
-            <Description description={description}/>
-          </Container>
-        </div>}
+        {(description) &&
+          (
+            <div className={descriptionClass}>
+              <Container>
+                <Description description={description} />
+              </Container>
+            </div>
+          )}
       </div>
       <div className={bottomBarClass}>
         {children}

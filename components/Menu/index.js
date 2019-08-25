@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import uuidv4 from 'uuid/v4';
 import classNames from 'classnames/bind';
 
 import scss, {
@@ -13,9 +14,9 @@ const styles = classNames.bind(scss);
 
 const Menu = ({items, path, colors}) => {
 
-  const aditionalItems = (items) ? items.map((item, id) => {
+  const aditionalItems = (items) ? items.map((item) => {
     return (
-      <a key={id} className={menuItemClass} href={item.link} style={{'--color': item.color || '#FFFFFF'}} title={item.title}>
+      <a key={uuidv4()} className={menuItemClass} href={item.link} style={{'--color': item.color || '#FFFFFF'}} title={item.title}>
         {item.title}
       </a>
     );
@@ -24,16 +25,44 @@ const Menu = ({items, path, colors}) => {
   return (
     <nav className={menuClass}>
       <Link href="/">
-        <a className={styles([menuItemClass, {activeMenuItem: (path === '/') && activeMenuItem}])} style={{'--color': colors.about || '#FFFFFF'}} title="About me page">About</a>
+        <a
+          href="/"
+          className={styles([menuItemClass, {activeMenuItem: (path === '/') && activeMenuItem}])}
+          style={{'--color': colors.about || '#FFFFFF'}}
+          title="About me page"
+        >
+            About
+        </a>
       </Link>
       <Link href="web">
-        <a className={styles([menuItemClass, {activeMenuItem: (path === '/web') && activeMenuItem}])} style={{'--color': colors.web || '#FFFFFF'}} title="Web projects page">Web</a>
+        <a
+          href="web"
+          className={styles([menuItemClass, {activeMenuItem: (path === '/web') && activeMenuItem}])}
+          style={{'--color': colors.web || '#FFFFFF'}}
+          title="Web projects page"
+        >
+            Web
+        </a>
       </Link>
       <Link href="video">
-        <a className={styles([menuItemClass, {activeMenuItem: (path === '/video') && activeMenuItem}])} style={{'--color': colors.video || '#FFFFFF'}} title="Video production page">Video</a>
+        <a
+          href="video"
+          className={styles([menuItemClass, {activeMenuItem: (path === '/video') && activeMenuItem}])}
+          style={{'--color': colors.video || '#FFFFFF'}}
+          title="Video production page"
+        >
+          Video
+        </a>
       </Link>
       <Link href="android">
-        <a className={styles([menuItemClass, {activeMenuItem: (path === '/android') && activeMenuItem}])} style={{'--color': colors.android || '#FFFFFF'}} title="Android development projects page">Android</a>
+        <a
+          href="android"
+          className={styles([menuItemClass, {activeMenuItem: (path === '/android') && activeMenuItem}])}
+          style={{'--color': colors.android || '#FFFFFF'}}
+          title="Android development projects page"
+        >
+          Android
+        </a>
       </Link>
       {aditionalItems}
     </nav>

@@ -20,6 +20,13 @@ $social-vars: (
   text-align: center;
 }
 
+.socialLinkContent {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  left: -999999999999px;
+}
+
 .socialIconClass {
   @include responsive-deep($social-vars, 'text', 'sizes');
 

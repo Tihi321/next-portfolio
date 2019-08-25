@@ -9,6 +9,10 @@ import './_app.scss';
 const https = require('https');
 
 class MyApp extends App {
+  state = {
+    navIsOpen: false,
+  };
+
   static async getInitialProps() {
 
     // enable self signed ceriticate api call for development.
@@ -68,6 +72,14 @@ class MyApp extends App {
     }
   }
 
+  setNavIsOpen = (val) => {
+    this.setState(() => {
+      return {
+        navIsOpen: val,
+      };
+    });
+  }
+
   render() {
     const {
       Component,
@@ -79,18 +91,22 @@ class MyApp extends App {
 
     return (
       <>
-        <style jsx global>{`
-          :root {
-            --accent-color: ${options.color};
-          }
-        `}</style>
+        <style jsx global>
+          {`
+            :root {
+              --accent-color: ${options.color};
+            }
+          `}
+        </style>
         <Navbar
+          openNav={this.state.navIsOpen}
+          openNavCallback={this.setNavIsOpen}
           asPath={asPath}
           colors={pageProps.colors}
           menuItems={pageProps.menuItems}
           options={pageProps.props.generalOptions}
         />
-        <Component {...options.props} />
+        <Component {...options.props} openNavCallback={this.setNavIsOpen} />
         <Footer
           date={pageProps.date}
           options={pageProps.props.generalOptions}

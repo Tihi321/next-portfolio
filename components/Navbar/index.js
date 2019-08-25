@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import classNames from 'classnames';
 
-import Menu from './../Menu';
-import SocialBar from './../SocialBar';
+import Menu from '../Menu';
+import SocialBar from '../SocialBar';
 
 import {
   menuIconClass,
@@ -11,6 +11,7 @@ import {
   modalGlobal,
   titleClass,
   disclaimerClass,
+  menuButtonsText,
 } from './style.scss';
 
 const Navbar = ({
@@ -18,32 +19,45 @@ const Navbar = ({
   menuItems,
   asPath,
   colors,
+  openNav,
+  openNavCallback,
 }) => {
-
-  const [isActive, setIsActive] = useState(false);
 
   const modalClass = classNames({
     modalClass: true,
-    modalActive: isActive,
+    modalActive: openNav,
   });
 
   const setActiveToggle = () => {
-    setIsActive(() => !isActive);
+    openNavCallback(!openNav);
   };
 
   return (
     <div className={modalGlobal}>
-      {(isActive) && <style jsx global>{`
-        :root {
-          overflow: hidden;
-        }
-      `}</style>}
+      {(openNav) &&
+      (
+        <style jsx global>
+          {`
+            :root {
+              overflow: hidden;
+            }
+          `}
+        </style>
+      )}
       <div className={navBarClass}>
-        <button className={menuIconClass} onClick={setActiveToggle}/>
+        <button id="open-menu" type="button" className={menuIconClass} onClick={setActiveToggle}>
+          <span className={menuButtonsText}>
+            Open Menu
+          </span>
+        </button>
       </div>
       <div className={modalClass}>
-        <div className={navBarClass} onClick={setActiveToggle}>
-          <button className={menuIconCloseClass}/>
+        <div className={navBarClass}>
+          <button type="button" className={menuIconCloseClass} onClick={setActiveToggle}>
+            <span className={menuButtonsText}>
+              Close Menu
+            </span>
+          </button>
         </div>
         <h1 className={titleClass}>
           Tihomir Selak

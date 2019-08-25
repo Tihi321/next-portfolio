@@ -8,9 +8,10 @@ class Error extends Component {
   }
 
   render() {
+    const {statusCode} = this.props;
     return (
       <p>
-        {this.props.statusCode ? `An error ${this.props.statusCode} occurred on this server` : 'An error occurred on client'}
+        {statusCode ? `An error ${statusCode} occurred on this server` : 'An error occurred on client'}
       </p>
     );
   }
