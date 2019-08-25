@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import {useRouter} from 'next/router';
 import uuidv4 from 'uuid/v4';
 import classNames from 'classnames/bind';
 
@@ -12,7 +13,9 @@ import scss, {
 const styles = classNames.bind(scss);
 
 
-const Menu = ({items, path, colors}) => {
+const Menu = ({items, colors}) => {
+
+  const {route} = useRouter();
 
   const aditionalItems = (items) ? items.map((item) => {
     return (
@@ -27,7 +30,7 @@ const Menu = ({items, path, colors}) => {
       <Link href="/">
         <a
           href="/"
-          className={styles([menuItemClass, {activeMenuItem: (path === '/') && activeMenuItem}])}
+          className={styles([menuItemClass, {activeMenuItem: (route === '/') && activeMenuItem}])}
           style={{'--color': colors.about || '#FFFFFF'}}
           title="About me page"
         >
@@ -37,7 +40,7 @@ const Menu = ({items, path, colors}) => {
       <Link href="web">
         <a
           href="web"
-          className={styles([menuItemClass, {activeMenuItem: (path === '/web') && activeMenuItem}])}
+          className={styles([menuItemClass, {activeMenuItem: (route === '/web') && activeMenuItem}])}
           style={{'--color': colors.web || '#FFFFFF'}}
           title="Web projects page"
         >
@@ -47,7 +50,7 @@ const Menu = ({items, path, colors}) => {
       <Link href="video">
         <a
           href="video"
-          className={styles([menuItemClass, {activeMenuItem: (path === '/video') && activeMenuItem}])}
+          className={styles([menuItemClass, {activeMenuItem: (route === '/video' || '/video/[slug]') && activeMenuItem}])}
           style={{'--color': colors.video || '#FFFFFF'}}
           title="Video production page"
         >
@@ -57,7 +60,7 @@ const Menu = ({items, path, colors}) => {
       <Link href="android">
         <a
           href="android"
-          className={styles([menuItemClass, {activeMenuItem: (path === '/android') && activeMenuItem}])}
+          className={styles([menuItemClass, {activeMenuItem: (route === '/android') && activeMenuItem}])}
           style={{'--color': colors.android || '#FFFFFF'}}
           title="Android development projects page"
         >

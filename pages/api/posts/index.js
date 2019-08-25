@@ -1,5 +1,5 @@
 import corsModule from 'micro-cors';
-import {posts} from '../data/posts';
+import posts from '../data/posts';
 
 const cors = corsModule({
   allowedMethods: ['GET'],

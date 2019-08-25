@@ -17,7 +17,6 @@ import {
 const Navbar = ({
   options,
   menuItems,
-  asPath,
   colors,
   openNav,
   openNavCallback,
@@ -63,7 +62,6 @@ const Navbar = ({
           Tihomir Selak
         </h1>
         <Menu
-          path={asPath}
           colors={colors}
           items={menuItems}
         />

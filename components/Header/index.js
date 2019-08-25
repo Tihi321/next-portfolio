@@ -5,13 +5,12 @@ import VideoElement from '../VideoElement';
 import LottieElement from '../LottieElement';
 import ImageElement from '../ImageElement';
 import Container from '../Container';
-import generalHelper from '../../halpers/general-helper';
+import {getExtension} from '../../halpers/general';
 
 import {
   headerClass,
   heroClass,
   descriptionClass,
-  bottomBarClass,
 } from './style.scss';
 
 const Header = (props) => {
@@ -25,7 +24,7 @@ const Header = (props) => {
     title,
     url,
   } = JSON.parse(animation);
-  const ext = generalHelper.getExtension(url);
+  const ext = getExtension(url);
 
   const getElement = () => {
     switch (ext) {
@@ -59,9 +58,7 @@ const Header = (props) => {
             </div>
           )}
       </div>
-      <div className={bottomBarClass}>
-        {children}
-      </div>
+      {children}
     </header>
   );
 };
