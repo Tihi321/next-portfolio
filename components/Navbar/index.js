@@ -1,34 +1,78 @@
-import React from 'react'
-import Link from 'next/link';
+import React from 'react';
+import classNames from 'classnames';
 
-import style from './Navbar.scss';
+import Menu from '../Menu';
+import SocialBar from '../SocialBar';
 
-const Navbar = () => {
+import {
+  menuIconClass,
+  navBarClass,
+  menuIconCloseClass,
+  modalGlobal,
+  titleClass,
+  disclaimerClass,
+  menuButtonsText,
+} from './style.scss';
+
+const Navbar = ({
+  options,
+  menuItems,
+  colors,
+  openNav,
+  openNavCallback,
+}) => {
+
+  const modalClass = classNames({
+    modalClass: true,
+    modalActive: openNav,
+  });
+
+  const setActiveToggle = () => {
+    openNavCallback(!openNav);
+  };
+
   return (
-    <nav className={style.navbar}>
-      <ul>
-        <li>
-          <Link href="/">
-            <a title="About me page">About</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="web">
-            <a title="Web projects page">Web</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="video">
-            <a title="Video production page">Video</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="android">
-            <a title="Android development projects page">Android</a>
-          </Link>
-        </li>
-      </ul>
-    </nav>
+    <div className={modalGlobal}>
+      {(openNav) &&
+      (
+        <style jsx global>
+          {`
+            :root {
+              overflow: hidden;
+            }
+          `}
+        </style>
+      )}
+      <div className={navBarClass}>
+        <button id="open-menu" type="button" className={menuIconClass} onClick={setActiveToggle}>
+          <span className={menuButtonsText}>
+            Open Menu
+          </span>
+        </button>
+      </div>
+      <div className={modalClass}>
+        <div className={navBarClass}>
+          <button type="button" className={menuIconCloseClass} onClick={setActiveToggle}>
+            <span className={menuButtonsText}>
+              Close Menu
+            </span>
+          </button>
+        </div>
+        <h1 className={titleClass}>
+          Tihomir Selak
+        </h1>
+        <Menu
+          colors={colors}
+          items={menuItems}
+        />
+        <SocialBar
+          options={options}
+        />
+        <div className={disclaimerClass}>
+          NextJs Frontend, Wordpress Backend
+        </div>
+      </div>
+    </div>
   );
 };
 

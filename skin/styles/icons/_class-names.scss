@@ -1,0 +1,43 @@
+.icon--message {
+  &::before {
+    content: unicode($icon--message);     
+    color: #fff;
+  }
+}
+.icon--google-play {
+  &::before {
+    content: unicode($icon--google-play);     
+    color: #fff;
+  }
+}
+.icon--youtube {
+  &::before {
+    content: unicode($icon--youtube);     
+    color: #fff;
+  }
+}
+.icon--linkedin {
+  &::before {
+    content: unicode($icon--linkedin);     
+    color: #fff;
+  }
+}
+.icon--github {
+  &::before {
+    content: unicode($icon--github);     
+    color: #fff;
+  }
+}
+.icon--menu {
+  &::before {
+    content: unicode($icon--menu);
+    color: #fff;
+  }
+}
+
+.icon--close {
+  &:before {
+    content: unicode($icon--close);     
+    color: #fff;
+  }
+}

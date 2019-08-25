@@ -1,22 +1,50 @@
 const postcssFontMagician = require('postcss-font-magician');
-const autoPrefixer = require('autoprefixer');
+const postcssNext = require('postcss-cssnext');
+
+const fontsPath = '/static/fonts';
 
 module.exports = {
   plugins: [
-    autoPrefixer,
     postcssFontMagician({
-      variants: {
-        'Open Sans Condensed': {
-          400: ['woff2', 'woff'],
-          800: ['woff2', 'woff'],
+      custom: {
+        portfolio: {
+          variants: {
+            normal: {
+              400: {
+                url: {
+                  svg: `${fontsPath}/portfolio.svg`,
+                  ttf: `${fontsPath}/portfolio.ttf`,
+                  woff: `${fontsPath}/portfolio.woff`,
+                },
+              },
+            },
+          },
         },
-        'Open Sans': {
+      },
+      variants: {
+        Karla: {
           400: ['woff2', 'woff'],
-          800: ['woff2', 'woff'],
+          700: ['woff2', 'woff'],
+        },
+        Rubik: {
+          400: ['woff2', 'woff'],
+          700: ['woff2', 'woff'],
         },
       },
       display: 'swap',
-      foundries: [ 'google'],
-    })
-  ]
+      foundries: ['custom', 'google'],
+    }),
+    postcssNext({
+      browsers: [
+        'last 2 version',
+      ],
+      features: {
+        rem: false,
+        customProperties: {
+          warnings: false,
+          preserve: true,
+        },
+      },
+    }),
+  ],
 };

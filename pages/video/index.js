@@ -1,12 +1,25 @@
-import Navbar from '../../components/Navbar';
-import Head from '../../components/Head';
+import React, {useEffect} from 'react';
+import VideoPage from './components/page';
 
-export default (props) => {
+const Video = (props) => {
+  const {
+    videoAnimationFile,
+    videoDescription,
+    openNavCallback,
+    projects,
+  } = props;
+
+  useEffect(() => {
+    openNavCallback(false);
+  }, []);
+
   return (
-    <>
-      <Head title="Video Development" />
-      <Navbar />
-      <div>Video</div>
-    </>
+    <VideoPage
+      description={videoDescription}
+      animation={videoAnimationFile}
+      projects={projects}
+    />
   );
-}
+};
+
+export default Video;

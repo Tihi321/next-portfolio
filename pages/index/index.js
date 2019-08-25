@@ -1,12 +1,38 @@
-import Navbar from '../../components/Navbar';
+import React, {useEffect} from 'react';
 import Head from '../../components/Head';
+import TitleBar from '../../components/TitleBar';
+import Header from '../../components/Header';
+import Body from '../../components/Body';
 
-export default () => {
+const Index = (props) => {
+  const {
+    aboutAnimationFile,
+    aboutDescription,
+    openNavCallback,
+  } = props;
+
+  useEffect(() => {
+    openNavCallback(false);
+  }, []);
+
   return (
     <>
       <Head title="About" />
-      <Navbar />
-      <div>About</div>
+      <Header
+        description={aboutDescription}
+        animation={aboutAnimationFile}
+      >
+        <TitleBar
+          title="About"
+        />
+      </Header>
+      <Body>
+        <div
+          dangerouslySetInnerHTML={{__html: aboutDescription}}
+        />
+      </Body>
     </>
   );
-}
+};
+
+export default Index;

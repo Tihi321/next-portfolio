@@ -1,0 +1,110 @@
+@import '../../skin/styles/shared';
+
+$navbar-vars: (
+  outline-color: $base-white-color,
+  text-color: $base-white-color,
+  title: (
+    font-family: $secondary-font-family,
+    sizes: (
+      mobile: (
+        font-size: 36px,
+        line-height: 1.25,
+      ),
+      tablet: (
+        font-size: 64px,
+      ),
+    ),
+  ),
+  z-index: (
+    modal: 3,
+    nav-bar: 2,
+  ),
+  nav-bar-index: 2,
+);
+
+.modalGlobal :global {
+  .modalClass {
+    background-color: var(--accent-color);
+    color: map-get-strict($navbar-vars, 'text-color');
+    text-align: center;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+    z-index: map-get-deep($navbar-vars, 'z-index', 'modal');
+    opacity: 0.99;
+    transition: transform 0.25s ease;
+    transform: translateY(-100%) translateZ(0);
+  }
+
+  .modalActive {
+    transform: translateY(-0%) translateZ(0);
+  }
+}
+
+.navBarClass {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: map-get-deep($navbar-vars, 'z-index', 'nav-bar');
+}
+
+.menuIconClass,
+.menuIconCloseClass {
+  @extend %font-icon;
+  @extend %button-reset;
+  background: none;
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  font-weight: bold;
+
+  &:focus {
+    outline: 1px solid map-get-strict($navbar-vars, 'outline-color');
+  }
+
+  &:hover {
+    box-shadow: 0 0 0 1px inset map-get-strict($navbar-vars, 'outline-color');
+  }
+}
+
+.menuButtonsText {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  left: -999999999999px;
+}
+
+.menuIconClass {
+  background-color: var(--accent-color);
+
+  &::before {
+    content: unicode($icon--menu);
+    color: map-get-strict($navbar-vars, 'text-color');
+  }
+}
+
+.menuIconCloseClass {
+  &::before {
+    content: unicode($icon--close);
+    color: map-get-strict($navbar-vars, 'text-color');
+  }
+}
+
+.titleClass {
+  @include responsive-deep($navbar-vars, 'title', 'sizes');
+  font-weight: normal;
+  font-family: map-get-deep($navbar-vars, 'title', 'font-family');
+}
+
+.disclaimerClass {
+  padding-top: 10px;
+}

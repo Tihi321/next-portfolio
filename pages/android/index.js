@@ -1,12 +1,59 @@
-import Navbar from '../../components/Navbar';
+import React, {useEffect, useState} from 'react';
+import uuidv4 from 'uuid/v4';
 import Head from '../../components/Head';
+import TitleBar from '../../components/TitleBar';
+import Header from '../../components/Header';
+import Body from '../../components/Body';
+import ListItem from '../../components/ListItem';
 
-export default () => {
+const Android = (props) => {
+  const {
+    androidAnimationFile,
+    androidDescription,
+    openNavCallback,
+    androidProjects,
+  } = props;
+
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    openNavCallback(false);
+    setProjects(() => {
+      return JSON.parse(androidProjects);
+    });
+  }, []);
+
+  const projectElements = projects.map((projectItem) => {
+    return (
+      <div
+        key={uuidv4()}
+      >
+        <ListItem
+          project={projectItem}
+        />
+      </div>
+    );
+  });
+
+
   return (
     <>
       <Head title="Android Development" />
-      <Navbar />
-      <div>Android</div>
+      <Header
+        description={androidDescription}
+        animation={androidAnimationFile}
+      >
+        <TitleBar
+          title="Android Development"
+        />
+      </Header>
+      <Body>
+        <ul>
+          {projectElements}
+        </ul>
+      </Body>
     </>
   );
-}
+};
+
+export default Android;

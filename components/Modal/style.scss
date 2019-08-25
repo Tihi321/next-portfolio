@@ -1,0 +1,87 @@
+@import '../../skin/styles/shared';
+
+$modal-vars: (
+  outline-color: $base-white-color,
+  text-color: $base-white-color,
+  background: rgba(0, 0, 0, 0.3),
+  z-index: (
+    modal: 3,
+    nav-bar: 2,
+  ),
+);
+
+.modalParentGlobal :global {
+  .modalParentClass {
+    backdrop-filter: blur(4px);
+    background-color: map-get-strict($modal-vars, 'background');
+    color: map-get-strict($modal-vars, 'text-color');
+    text-align: center;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+    z-index: map-get-deep($modal-vars, 'z-index', 'modal');
+    opacity: 0;
+    transform: scale(0.8);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    pointer-events: none;
+  }
+
+  .modalParentActive {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.navBarClass {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: map-get-deep($modal-vars, 'z-index', 'nav-bar');
+}
+
+.modalIconCloseClass {
+  @extend %font-icon;
+  @extend %button-reset;
+  background-color: var(--accent-color);
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  font-weight: bold;
+
+  &:focus {
+    outline: 1px solid map-get-strict($modal-vars, 'outline-color');
+  }
+
+  &:hover {
+    box-shadow: 0 0 0 1px inset map-get-strict($modal-vars, 'outline-color');
+  }
+
+  &::before {
+    content: unicode($icon--close);
+    color: map-get-strict($modal-vars, 'text-color');
+  }
+}
+
+.modalButtonsText {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  left: -999999999999px;
+}
+
+.centeredElement {
+  max-width: 770px;
+  width: 100%;
+}

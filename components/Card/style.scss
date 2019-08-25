@@ -1,0 +1,34 @@
+@import '../../skin/styles/shared';
+
+$card-vars: (
+  sizes: (
+    mobile: (
+      font-size: 24px,
+      line-height: 1.25,
+    ),
+    tablet: (
+      font-size: 32px,
+    ),
+  ),
+);
+
+.cardClass {
+  width: 100%;
+  cursor: pointer;
+  padding: 0;
+}
+
+.cardIimageClass {
+  width: 100%;
+  min-height: 180px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.cardITitleClass {
+  @include responsive($card-vars, 'sizes');
+  font-weight: bold;
+  margin: 10px 0;
+  text-align: center;
+}

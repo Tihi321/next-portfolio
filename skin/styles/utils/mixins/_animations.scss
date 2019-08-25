@@ -1,0 +1,36 @@
+@mixin animation (
+  $animation,
+  $duration: 0.35s,
+  $easing: ease-in-out,
+  $delay: 0,
+  $direction: forwards,
+  $fillmode: forwards) {
+
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-name: $animation;
+  animation-fill-mode: $fillmode;
+  animation-direction: $direction;
+  animation-timing-function: $easing;
+
+}
+
+// -- Animations -- //
+
+@keyframes reveal {
+  0% {
+    transform: translateY(-100%) translateZ(0);
+  }
+  100% {
+    transform: translateY(0) translateZ(0);
+  }
+}
+@keyframes hide {
+  0% {
+    transform: translateY(0) translateZ(0);
+  }
+  100% {
+    transform: translateY(-100%) translateZ(0);
+  }
+}
+

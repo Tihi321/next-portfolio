@@ -1,0 +1,11 @@
+.cardContainerClass {
+  display: flex;
+  margin: 0 -10px;
+  flex-wrap: wrap;
+}
+
+.cardItemClass {
+  width: 30%;
+  min-width: 200px;
+  margin: 10px;
+}

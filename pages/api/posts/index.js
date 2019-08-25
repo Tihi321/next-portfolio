@@ -1,7 +1,7 @@
-import Cors from 'micro-cors';
-import { posts } from '../data/posts';
+import corsModule from 'micro-cors';
+import posts from '../data/posts';
 
-const cors = Cors({
+const cors = corsModule({
   allowedMethods: ['GET'],
 });
 

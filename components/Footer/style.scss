@@ -1,0 +1,12 @@
+@import '../../skin/styles/shared';
+
+$footer-vars: (
+  color: $base-white-color,
+);
+
+.footerClass {
+  color: map-get-strict($footer-vars, 'color');
+  background-color: var(--accent-color);
+  position: relative;
+  padding: 20px 0;
+}

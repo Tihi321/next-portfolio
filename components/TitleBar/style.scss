@@ -1,0 +1,26 @@
+@import '../../skin/styles/shared';
+
+$title-vars: (
+  text: (
+    color: $base-white-color,
+    sizes: (
+      mobile: (
+        font-size: 24px,
+        line-height: 1.25,
+      ),
+      tablet: (
+        font-size: 32px,
+      ),
+    ),
+  ),
+  font-family: $secondary-font-family,
+);
+
+.titleBarClass {
+  @include responsive-deep($title-vars, 'text', 'sizes');
+  color: map-get-deep($title-vars, 'text', 'color');
+  font-family: map-get-strict($title-vars, 'font-family');
+  background-color: var(--accent-color);
+  padding: 20px;
+  margin: 0;
+}
