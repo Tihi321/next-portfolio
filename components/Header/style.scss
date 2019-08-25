@@ -6,10 +6,17 @@ $header-vars: (
 
 .headerClass {
   position: relative;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .heroClass {
   position: relative;
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .descriptionClass {

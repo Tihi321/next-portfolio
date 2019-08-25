@@ -1,13 +1,13 @@
 const postcssFontMagician = require('postcss-font-magician');
 const postcssNext = require('postcss-cssnext');
 
-const fontsPath = `/static/fonts`;
+const fontsPath = '/static/fonts';
 
 module.exports = {
   plugins: [
     postcssFontMagician({
       custom: {
-        'portfolio': {
+        portfolio: {
           variants: {
             normal: {
               400: {
@@ -22,29 +22,29 @@ module.exports = {
         },
       },
       variants: {
-        'Karla': {
+        Karla: {
           400: ['woff2', 'woff'],
           700: ['woff2', 'woff'],
         },
-        'Rubik': {
+        Rubik: {
           400: ['woff2', 'woff'],
           700: ['woff2', 'woff'],
         },
       },
       display: 'swap',
-      foundries: [ 'custom', 'google' ],
+      foundries: ['custom', 'google'],
     }),
     postcssNext({
       browsers: [
-        'last 2 version'
+        'last 2 version',
       ],
       features: {
         rem: false,
         customProperties: {
           warnings: false,
-          preserve: true
-        }
-      }
-    })
-  ]
+          preserve: true,
+        },
+      },
+    }),
+  ],
 };

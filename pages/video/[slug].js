@@ -39,8 +39,6 @@ const Video = (props) => {
 
     if (slugs.length > 0) {
       const index = slugs.indexOf(slug);
-
-      console.log(document.title);
   
       if (index >= 0) {
         setProject(() => {

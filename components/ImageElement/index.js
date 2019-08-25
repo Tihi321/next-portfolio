@@ -1,5 +1,9 @@
 import React from 'react';
 
+import {
+  imageElementClass,
+} from './style.scss';
+
 const ImageElement = (props) => {
   const {
     mediaAlt,
@@ -7,9 +11,7 @@ const ImageElement = (props) => {
   } = props;
 
   return (
-    <figure className="image-element">
-      <img className="media-image-class" src={mediaUrl} alt={mediaAlt} />
-    </figure>
+    <img className={imageElementClass} src={mediaUrl} alt={mediaAlt} />
   );
 };
 

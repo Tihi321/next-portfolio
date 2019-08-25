@@ -19,6 +19,7 @@ const Index = (props) => {
     <>
       <Head title="About" />
       <Header
+        description={aboutDescription}
         animation={aboutAnimationFile}
       >
         <TitleBar

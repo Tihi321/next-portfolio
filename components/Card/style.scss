@@ -20,7 +20,7 @@ $card-vars: (
 
 .cardIimageClass {
   width: 100%;
-  min-height: 150px;
+  min-height: 180px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -29,4 +29,6 @@ $card-vars: (
 .cardITitleClass {
   @include responsive($card-vars, 'sizes');
   font-weight: bold;
+  margin: 10px 0;
+  text-align: center;
 }

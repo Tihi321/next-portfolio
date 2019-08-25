@@ -36,6 +36,10 @@ $body-vars: (
   padding-top: 50px;
   padding-bottom: 50px;
 
+  p {
+    margin: 10px 0;
+  }
+
   a {
     text-decoration: none;
     display: inline-block;
@@ -67,5 +71,13 @@ $body-vars: (
 
   h2 {
     @include responsive-deep($body-vars, 'text-sizes', 'heading-2');
+  }
+
+  ul {
+    padding-left: 0;
+  }
+
+  li {
+    list-style: none;
   }
 }

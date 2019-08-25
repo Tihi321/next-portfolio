@@ -13,8 +13,9 @@ import scss, {
 const styles = classNames.bind(scss);
 
 
-const Menu = ({items, colors}) => {
 
+const Menu = ({items, colors}) => {
+  
   const {route} = useRouter();
 
   const aditionalItems = (items) ? items.map((item) => {
@@ -50,7 +51,7 @@ const Menu = ({items, colors}) => {
       <Link href="video">
         <a
           href="video"
-          className={styles([menuItemClass, {activeMenuItem: (route === '/video' || '/video/[slug]') && activeMenuItem}])}
+          className={styles([menuItemClass, {activeMenuItem: (route === '/video' || route === '/video/[slug]') && activeMenuItem}])}
           style={{'--color': colors.video || '#FFFFFF'}}
           title="Video production page"
         >
