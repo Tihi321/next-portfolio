@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import Lottie from 'react-lottie';
+import Lottie from 'lottie-react-web';
 
 import {
   lottieElement,

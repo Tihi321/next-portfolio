@@ -39,8 +39,6 @@ class MyApp extends App {
       router: {route},
     } = this.props;
 
-    console.log(not);
-
     const options = getOptions(route, data.props, videoSlugs, videoProjects);
 
     return (
