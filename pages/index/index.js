@@ -8,6 +8,7 @@ const Index = (props) => {
   const {
     aboutAnimationFile,
     aboutDescription,
+    aboutPage,
     openNavCallback,
   } = props;
 
@@ -19,7 +20,7 @@ const Index = (props) => {
     <>
       <Head title="About" />
       <Header
-        description={aboutDescription}
+        description={aboutPage}
         animation={aboutAnimationFile}
       >
         <TitleBar
