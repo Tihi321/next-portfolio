@@ -11,7 +11,7 @@ const ImageElement = (props) => {
   } = props;
 
   return (
-    <img className={imageElementClass} src={mediaUrl} alt={mediaAlt} />
+    <div className={imageElementClass} style={{ backgroundImage: `url(${mediaUrl})` }} aria-label={mediaAlt} />
   );
 };
 

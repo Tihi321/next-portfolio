@@ -10,17 +10,15 @@ const VideoElement = (props) => {
   } = props;
 
   return (
-    <figure className={videoElementClass}>
-      <video
-        className={videoClass}
-        controls={false}
-        muted
-        autoPlay
-      >
-        <source src={mediaUrl} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </figure>
+    <video
+      className={videoClass}
+      controls={false}
+      muted
+      autoPlay
+    >
+      <source src={mediaUrl} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
   );
 };
 

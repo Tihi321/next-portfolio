@@ -11,6 +11,7 @@ import {
   headerClass,
   heroClass,
   descriptionClass,
+  backgroundClass,
 } from './style.scss';
 
 const Header = (props) => {
@@ -48,7 +49,9 @@ const Header = (props) => {
       className={headerClass}
     >
       <div className={heroClass}>
-        {getElement()}
+        <div className={backgroundClass} >
+          {getElement()}
+        </div>
         {(description) &&
           (
             <div className={descriptionClass}>

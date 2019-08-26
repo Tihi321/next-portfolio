@@ -40,10 +40,10 @@
 //   }
 // }
 
-@mixin responsive-deep($map, $key, $subkey) {
+@mixin responsive-deep($map, $key...) {
   $i: 0;
 
-  @each $breakpoint, $breakpointMap in map-get-deep($map, $key, $subkey) {
+  @each $breakpoint, $breakpointMap in map-get-deep($map, $key...) {
     @if (type-of($breakpointMap) == 'map') {
       @if $i == 0 {
         @each $cssSelector, $cssValue in $breakpointMap {
