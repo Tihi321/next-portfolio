@@ -47,15 +47,26 @@ class MyApp extends App {
   render() {
     const {
       Component,
-      api: {
-        data,
-        videoSlugs,
-        videoProjects,
-      },
+      api,
       router: {route},
     } = this.props;
 
-    const options = getOptions(route, data.props, videoSlugs, videoProjects);
+    if (!api) {
+      return '';
+    }
+
+    const {
+      data: {
+        props,
+        colors,
+        menuItems,
+        date,
+      },
+      videoSlugs,
+      videoProjects,
+    } = api;
+
+    const options = getOptions(route, props, videoSlugs, videoProjects);
 
     return (
       <>
@@ -69,14 +80,14 @@ class MyApp extends App {
         <Navbar
           openNav={this.state.navIsOpen}
           openNavCallback={this.setNavIsOpen}
-          colors={data.colors}
-          menuItems={data.menuItems}
-          options={data.props.generalOptions}
+          colors={colors}
+          menuItems={menuItems}
+          options={props.generalOptions}
         />
         <Component {...options.props} openNavCallback={this.setNavIsOpen} />
         <Footer
-          date={data.date}
-          options={data.props.generalOptions}
+          date={date}
+          options={props.generalOptions}
         />
       </>
     );
