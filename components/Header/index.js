@@ -5,7 +5,7 @@ import VideoElement from '../VideoElement';
 import LottieElement from '../LottieElement';
 import ImageElement from '../ImageElement';
 import Container from '../Container';
-import {getExtension} from '../../halpers/general';
+import {getExtension} from '../../utils/general';
 
 import {
   headerClass,

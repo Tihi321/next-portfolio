@@ -50,4 +50,12 @@ const Web = (props) => {
   );
 };
 
+Web.getInitialProps = async function({client: {cachedFetch}}) {
+
+  // custom api call per page
+  const api = await cachedFetch('props');
+
+  return {api};
+};
+
 export default Web;

@@ -1,22 +1,39 @@
 import React from 'react';
 import App from 'next/app';
 import 'isomorphic-fetch';
-import {cachedFetch} from '../halpers/api';
-import {getOptions} from '../halpers/data';
+import {getOrCreateClient} from '../services';
+import {Client} from '../services/client';
+import {getOptions} from '../utils/data';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import './_app.scss';
 
 class MyApp extends App {
-  state = {
-    navIsOpen: false,
-  };
+  constructor(props) {
+    super(props);
 
-  static async getInitialProps() {
+    const client = new Client();
+    client.hydrate(props.snapshot);
 
-    const api = await cachedFetch('props');
+    this.state = {
+      navIsOpen: false,
+    }
+  }
 
-    return {api};
+  static async getInitialProps({ Component, ctx }) {
+
+    let api = {};
+    const client = getOrCreateClient();
+
+    if (Component.getInitialProps) {
+      const pageCtx = { ...ctx, client };  
+      api = await Component.getInitialProps(pageCtx);
+    }
+
+    return {
+      ...api,
+      snapshot: client.getSnapshot(),
+    };
   }
 
   setNavIsOpen = (val) => {
@@ -34,7 +51,6 @@ class MyApp extends App {
         data,
         videoSlugs,
         videoProjects,
-        not,
       },
       router: {route},
     } = this.props;
