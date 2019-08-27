@@ -8,6 +8,7 @@ const Index = (props) => {
   const {
     aboutAnimationFile,
     aboutDescription,
+    aboutPage,
     openNavCallback,
   } = props;
 
@@ -19,7 +20,7 @@ const Index = (props) => {
     <>
       <Head title="About" />
       <Header
-        description={aboutDescription}
+        description={aboutPage}
         animation={aboutAnimationFile}
       >
         <TitleBar
@@ -34,5 +35,14 @@ const Index = (props) => {
     </>
   );
 };
+
+Index.getInitialProps = async function({client: {cachedFetch}}) {
+
+  // custom api call per page
+  const api = await cachedFetch('props');
+
+  return {api};
+};
+
 
 export default Index;

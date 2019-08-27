@@ -1,9 +1,12 @@
 import React, {useState, useEffect} from 'react';
-import Lottie from 'react-lottie';
+import Lottie from 'lottie-react-web';
 
 import {
   lottieElement,
 } from './style.scss';
+
+const dummyUrl01 = '/static/data/dino-dance.json';
+const dummyUrl02 = '/static/data/earth.json';
 
 const LottieElement = (props) => {
   const {
@@ -13,25 +16,16 @@ const LottieElement = (props) => {
   const [data, setData] = useState('');
   const [loaded, setLoaded] = useState(false);
 
-  const dummyUrl01 = '/static/data/dino-dance.json';
-  const dummyUrl02 = '/static/data/earth.json';
-
   useEffect(() => {
-    const fetchData = () => {
-      fetch(dummyUrl01)
-        .then((response) => {
-          return response.json();
-        })
-        .then((response) => {
-          setData(response);
-          setLoaded(true);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+    const fetchData = async () => {
+      const response = await fetch(dummyUrl01);
+      const data = await response.json();
+
+      setData(data);
+      setLoaded(true);
     };
 
-    fetchData();
+    fetchData(setData, setLoaded);
   }, []);
 
 

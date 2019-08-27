@@ -7,7 +7,8 @@ https://github.com/infinum/eightshift-frontend-libs/blob/develop/scss/_core.scss
 */
 
 $media-breakpoints: (
-  mobile: 0 767,
+  small: 0 480,
+  mobile: 481 767,
   tablet: 768 991,
   desktop: 992
 );

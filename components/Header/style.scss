@@ -6,7 +6,6 @@ $header-vars: (
 
 .headerClass {
   position: relative;
-  min-height: 50vh;
   display: flex;
   flex-direction: column;
 }
@@ -17,17 +16,27 @@ $header-vars: (
   flex: 1;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .descriptionClass {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
+  position: relative;
+  z-index: 1;
   background-color: map-get-strict($header-vars, 'bg');
   display: flex;
   align-items: center;
+  padding: 50px 0;
+
+  @include media(tablet up) {
+    padding: 150px 0;
+  };
+}
+
+.backgroundClass {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

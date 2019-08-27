@@ -1,11 +1,23 @@
+@import '../../../skin//styles//shared';
+
 .cardContainerClass {
   display: flex;
-  margin: 0 -10px;
   flex-wrap: wrap;
+
+  @include media(mobile up) {
+    margin: 0 -10px;
+  }
 }
 
 .cardItemClass {
-  width: 30%;
-  min-width: 200px;
-  margin: 10px;
+  width: 100%;
+
+  @include media(mobile up) {
+    width: 50%;
+    padding: 10px;
+  }
+  @include media(tablet up) {
+    width: 30%;
+    min-width: 200px;
+  }
 }

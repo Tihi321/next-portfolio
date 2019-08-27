@@ -5,12 +5,13 @@ import VideoElement from '../VideoElement';
 import LottieElement from '../LottieElement';
 import ImageElement from '../ImageElement';
 import Container from '../Container';
-import {getExtension} from '../../halpers/general';
+import {getExtension} from '../../utils/general';
 
 import {
   headerClass,
   heroClass,
   descriptionClass,
+  backgroundClass,
 } from './style.scss';
 
 const Header = (props) => {
@@ -48,7 +49,9 @@ const Header = (props) => {
       className={headerClass}
     >
       <div className={heroClass}>
-        {getElement()}
+        <div className={backgroundClass} >
+          {getElement()}
+        </div>
         {(description) &&
           (
             <div className={descriptionClass}>
