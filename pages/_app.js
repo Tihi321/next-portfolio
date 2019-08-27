@@ -2,7 +2,6 @@ import React from 'react';
 import App from 'next/app';
 import 'isomorphic-fetch';
 import {getOrCreateClient} from '../services';
-import {Client} from '../services/client';
 import {getOptions} from '../utils/data';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -12,7 +11,7 @@ class MyApp extends App {
   constructor(props) {
     super(props);
 
-    const client = new Client();
+    const client = getOrCreateClient();
     client.hydrate(props.snapshot);
 
     this.state = {
@@ -32,7 +31,7 @@ class MyApp extends App {
 
     return {
       ...api,
-      snapshot: client.getSnapshot(),
+      snapshot: client.snapshot,
     };
   }
 

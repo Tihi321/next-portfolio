@@ -51,12 +51,12 @@ export class Client {
   }
   
 
-    getSnapshot() {
-      return JSON.stringify([...this.requestCache]);
-    }
-    
-    hydrate(snapshot) {
-      this.requestCache = new Map(JSON.parse(snapshot));
-    }
-
+  get snapshot() {
+    return JSON.stringify([...this.requestCache]);
   }
+  
+  hydrate(snapshot) {
+    this.requestCache = new Map(JSON.parse(snapshot));
+  }
+
+}
