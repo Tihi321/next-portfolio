@@ -22,10 +22,10 @@ const Video = (props) => {
   );
 };
 
-Video.getInitialProps = async function({client: {cachedFetch}}) {
+Video.getInitialProps = async function({client}) {
 
   // custom api call per page
-  const api = await cachedFetch('props');
+  const api = await client.fetch('props');
 
   return {api};
 };

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useRef} from 'react';
 import {useRouter} from 'next/router';
 import VideoPage from './components/page';
 import Modal from '../../components/Modal';
@@ -19,11 +19,14 @@ const Video = (props) => {
 
   const [project, setProject] = useState({});
   const [showModal, setShowModal] = useState(false);
+  const videoRef = useRef(null);
+  
 
   const router = useRouter();
 
   const onCloseCallback = () => {
     window.history.replaceState({}, document.title, '/video');
+    videoRef.current.srcdoc = '';
   };
 
   useEffect(() => {
@@ -63,6 +66,7 @@ const Video = (props) => {
             <YoutubeElement
               title={project.title}
               link={project.link}
+              videoRef={videoRef}
             />
             <div className={youtubeTitleClass}>
               {project.title}
@@ -78,10 +82,10 @@ const Video = (props) => {
   );
 };
 
-Video.getInitialProps = async function({client: {cachedFetch}}) {
+Video.getInitialProps = async function({client}) {
 
   // custom api call per page
-  const api = await cachedFetch('props');
+  const api = await client.fetch('props');
 
   return {api};
 };

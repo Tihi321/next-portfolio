@@ -2,6 +2,8 @@
 
 $header-vars: (
   bg: rgba($base-dove-color, 0.7),
+  backdrop-color: $base-white-color,
+  backdrop-font: 14px,
 );
 
 .headerClass {
@@ -26,10 +28,15 @@ $header-vars: (
   display: flex;
   align-items: center;
   padding: 50px 0;
+  transition: opacity 0.3s ease;
 
   @include media(tablet up) {
     padding: 150px 0;
   };
+}
+
+.isHidden {
+  opacity: 0;
 }
 
 .backgroundClass {
@@ -39,4 +46,35 @@ $header-vars: (
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.hideDescriptionClass {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 10px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  transition: opacity 0.3s ease;
+  opacity: 0.4;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.hideDescriptionIconClass {
+  width: 10px;
+  height: 10px;
+  margin-left: 5px;
+}
+
+.hideDescriptionTextClass {
+  font-weight: bold;
+  color: map-get-strict($header-vars, 'backdrop-color');
+  font-size: map-get-strict($header-vars, 'backdrop-font');
 }

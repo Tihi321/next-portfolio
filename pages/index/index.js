@@ -36,10 +36,10 @@ const Index = (props) => {
   );
 };
 
-Index.getInitialProps = async function({client: {cachedFetch}}) {
+Index.getInitialProps = async function({client}) {
 
   // custom api call per page
-  const api = await cachedFetch('props');
+  const api = await client.fetch('props');
 
   return {api};
 };

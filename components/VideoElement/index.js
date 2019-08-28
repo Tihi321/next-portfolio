@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  videoElementClass,
   videoClass,
 } from './style.scss';
 
@@ -15,6 +14,7 @@ const VideoElement = (props) => {
       controls={false}
       muted
       autoPlay
+      loop
     >
       <source src={mediaUrl} type="video/mp4" />
       Your browser does not support the video tag.

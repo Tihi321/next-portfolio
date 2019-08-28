@@ -56,10 +56,10 @@ const Android = (props) => {
   );
 };
 
-Android.getInitialProps = async function({client: {cachedFetch}}) {
+Android.getInitialProps = async function({client}) {
 
   // custom api call per page
-  const api = await cachedFetch('props');
+  const api = await client.fetch('props');
 
   return {api};
 };

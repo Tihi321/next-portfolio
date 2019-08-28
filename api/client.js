@@ -4,27 +4,29 @@ const https = require('https');
 import {getProjects, getPageProps} from '../utils/data';
 
 export class Client {
+  constructor(api, development) {
 
-  requestCache = new Map()
+    this.api = api;
+    this.development = development;
+
+    this.requestCache = new Map()
+
+  }
 
   getWPData = async () => {
-
-    // enable self signed ceriticate api call for development.
-    const development = process.env.NEXT_ENV === 'development';
   
     const options = {
       agent: new https.Agent({
-        rejectUnauthorized: !development,
+        rejectUnauthorized: !this.development,
       }),
     };
   
-    const dataUrl = 'https://blog.tihomir-selak.from.hr/wp-json/portfolio-backend/v1/portfolio-page';
-    const response = await fetch(dataUrl, options);
+    const response = await fetch(this.api, options);
   
     return await response.json();
   }
 
-  cachedFetch = async (param) => {
+  fetch = async (param) => {
 
     const cachedResponse = this.requestCache.get(param);
   

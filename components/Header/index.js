@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import Description from '../Description';
 import VideoElement from '../VideoElement';
@@ -12,6 +12,10 @@ import {
   heroClass,
   descriptionClass,
   backgroundClass,
+  hideDescriptionClass,
+  hideDescriptionIconClass,
+  hideDescriptionTextClass,
+  isHidden,
 } from './style.scss';
 
 const Header = (props) => {
@@ -20,6 +24,15 @@ const Header = (props) => {
     animation,
     children,
   } = props;
+
+  const [hideDescription, setHideDescription] = useState(false);
+
+  const onSetHideDescriptionToggle = () => {
+    console.log('click');
+    setHideDescription(() => {
+      return !hideDescription;
+    });
+  }
 
   const {
     title,
@@ -44,17 +57,33 @@ const Header = (props) => {
     return '';
   };
 
+  const circleFill = (hideDescription) ? 'red' : 'green';
+  const circleElement = (
+    <svg className={hideDescriptionIconClass} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="50" fill={circleFill} />
+    </svg>
+  );
+
+  const descriptionFullClass = (hideDescription) ? `${descriptionClass} ${isHidden}` : descriptionClass;
+
   return (
     <header
       className={headerClass}
     >
+      <button
+        className={hideDescriptionClass}
+        onClick={onSetHideDescriptionToggle}
+      >
+        <span className={hideDescriptionTextClass}>Backdrop</span>
+        {circleElement}
+      </button>
       <div className={heroClass}>
         <div className={backgroundClass} >
           {getElement()}
         </div>
         {(description) &&
           (
-            <div className={descriptionClass}>
+            <div className={descriptionFullClass}>
               <Container>
                 <Description description={description} />
               </Container>
