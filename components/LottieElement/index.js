@@ -5,9 +5,6 @@ import {
   lottieElement,
 } from './style.scss';
 
-const dummyUrl01 = '/static/data/dino-dance.json';
-const dummyUrl02 = '/static/data/earth.json';
-
 const LottieElement = (props) => {
   const {
     mediaUrl,
@@ -18,7 +15,8 @@ const LottieElement = (props) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(dummyUrl01);
+
+      const response = await fetch(mediaUrl);
       const data = await response.json();
 
       setData(data);

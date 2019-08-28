@@ -28,7 +28,6 @@ const Header = (props) => {
   const [hideDescription, setHideDescription] = useState(false);
 
   const onSetHideDescriptionToggle = () => {
-    console.log('click');
     setHideDescription(() => {
       return !hideDescription;
     });

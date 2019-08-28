@@ -37,7 +37,7 @@ $navbar-vars: (
     z-index: map-get-deep($navbar-vars, 'z-index', 'modal');
     opacity: 0.99;
     transition: transform 0.25s ease;
-    transform: translateY(-110%) translateZ(0);
+    transform: translateY(-300%) translateZ(0);
   }
 
   .modalActive {
