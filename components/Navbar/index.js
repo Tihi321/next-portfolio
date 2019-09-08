@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import { useTween } from 'react-use';
 
 import Menu from '../Menu';
 import SocialBar from '../SocialBar';
@@ -26,6 +27,9 @@ const Navbar = ({
   logo,
 }) => {
 
+  const value = useTween('inOutExpo', 350, 200);
+  const openMenuIcontranslate = (100 - (value * 100));
+
   const modalClass = classNames({
     modalClass: true,
     modalActive: openNav,
@@ -49,8 +53,18 @@ const Navbar = ({
           `}
         </style>
       )}
-      <div className={navBarClass}>
-        <button id="open-menu" type="button" className={menuIconClass} onClick={setActiveToggle}>
+      <div
+        className={navBarClass}
+        style={{
+          transform: `translateY(-${openMenuIcontranslate}%)`,
+        }}
+      >
+        <button
+          id="open-menu"
+          type="button"
+          className={menuIconClass}
+          onClick={setActiveToggle}
+        >
           <span className={menuButtonsText}>
             Open Menu
           </span>

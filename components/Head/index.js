@@ -36,9 +36,9 @@ const Head = (props) => {
 
       <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 
-      <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+      <meta httpEquiv="Content-type" content="text/html; charset=utf-8" />
 
       <meta name="format-detection" content="telephone=no" />
 
