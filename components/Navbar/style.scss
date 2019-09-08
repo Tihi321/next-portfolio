@@ -105,6 +105,27 @@ $navbar-vars: (
   font-family: map-get-deep($navbar-vars, 'title', 'font-family');
 }
 
+.logoClass {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+
+.linkClass {
+  color: map-get-strict($navbar-vars, 'text-color');
+  display: inline-block;
+  margin: 0 auto;
+  margin: {
+    top: 30px;
+    bottom: 30px;
+  };
+  text-decoration: none;
+}
+
+.linkImage {
+  max-width: 250px;
+}
+
 .disclaimerClass {
   padding-top: 10px;
 }

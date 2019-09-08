@@ -12,6 +12,8 @@ const Head = (props) => {
     description,
     url,
     ogImage,
+    favicon,
+    logo,
   } = props;
   const pageTitle = (title) ? `Tihomir Selak Portfolio || ${title}` : 'Tihomir Selak Portfolio';
 
@@ -31,6 +33,29 @@ const Head = (props) => {
       />
       <meta name="twitter:site" content={url || defaultOGURL} />
       <meta name="twitter:image" content={ogImage || defaultOGImage} />
+
+      <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+      <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+      <meta name="format-detection" content="telephone=no" />
+
+      <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+      <link rel="dns-prefetch" href="//ajax.googleapis.com" />
+      <link rel="dns-prefetch" href="//www.google-analytics.com" />
+
+      <meta name="theme-color" content="#900000" />
+
+      <meta name="application-name" content={pageTitle} />
+      <meta name="msapplication-TileColor" content="#900000" />
+
+      <meta name="apple-mobile-web-app-title" content={pageTitle} />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="#C3151B" />
+      <link rel="apple-touch-startup-image" href={logo} />
+      <link rel="shortcut icon" href={favicon} />
     </NextHead>
   );
 };
@@ -40,6 +65,8 @@ Head.propTypes = {
   description: string,
   url: string,
   ogImage: string,
+  favicon: string,
+  logo: string,
 };
 
 Head.defaultProps = {
@@ -47,6 +74,8 @@ Head.defaultProps = {
   description: 'Tihomir Selak portfolio site',
   url: '',
   ogImage: '',
+  favicon: '',
+  logo: '',
 };
 
 export default Head;
