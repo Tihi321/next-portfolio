@@ -3,6 +3,7 @@ import App from 'next/app';
 import 'isomorphic-fetch';
 import {getOrCreateClient} from '../services';
 import {getOptions} from '../utils/data';
+import Head from '../components/Head';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import './_app.scss';
@@ -60,6 +61,10 @@ class MyApp extends App {
         colors,
         menuItems,
         date,
+        assets: {
+          logo,
+          favicon,
+        },
       },
       videoSlugs,
       videoProjects,
@@ -76,12 +81,17 @@ class MyApp extends App {
             }
           `}
         </style>
+        <Head
+          favicon={favicon}
+          logo={logo}
+        />
         <Navbar
           openNav={this.state.navIsOpen}
           openNavCallback={this.setNavIsOpen}
           colors={colors}
           menuItems={menuItems}
           options={props.generalOptions}
+          logo={logo}
         />
         <Component {...options.props} openNavCallback={this.setNavIsOpen} />
         <Footer

@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import Menu from '../Menu';
 import SocialBar from '../SocialBar';
 
-import {
+import scss, {
   menuIconClass,
   navBarClass,
   menuIconCloseClass,
@@ -12,6 +12,9 @@ import {
   titleClass,
   disclaimerClass,
   menuButtonsText,
+  logoClass,
+  linkClass,
+  linkImage,
 } from './style.scss';
 
 const Navbar = ({
@@ -20,12 +23,15 @@ const Navbar = ({
   colors,
   openNav,
   openNavCallback,
+  logo,
 }) => {
 
   const modalClass = classNames({
     modalClass: true,
     modalActive: openNav,
   });
+
+  const styles = classNames.bind(scss);
 
   const setActiveToggle = () => {
     openNavCallback(!openNav);
@@ -58,9 +64,24 @@ const Navbar = ({
             </span>
           </button>
         </div>
-        <h1 className={titleClass}>
-          Tihomir Selak
-        </h1>
+        {(!logo) ?
+            <a
+            href='/'
+            className={linkClass}
+            >
+              <h1 className={titleClass}>Tihomimir Selak</h1>
+            </a> :
+            <a
+              href='/'
+              className={styles([linkClass, linkImage])}
+            >
+              <img
+                src={logo}
+                className={logoClass}
+                alt="Tihomir Selak Portfolio"
+              />
+            </a>
+          }
         <Menu
           colors={colors}
           items={menuItems}

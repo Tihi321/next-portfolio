@@ -11,6 +11,10 @@ export function getPageProps(json) {
       web: json.webOptions.webAccentColor,
     },
     menuItems: JSON.parse(json.generalOptions.menuItems),
+    assets: {
+      logo: json.generalOptions.logo,
+      favicon: json.generalOptions.favicon,
+    },
     date: format(new Date(), 'Y'),
   }
 }
