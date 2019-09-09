@@ -56,7 +56,7 @@ const Header = (props) => {
     return '';
   };
 
-  const circleFill = (hideDescription) ? 'red' : 'green';
+  const circleFill = (hideDescription) ? '#E74C3C' : '#2ECC71';
   const circleElement = (
     <svg className={hideDescriptionIconClass} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
       <circle cx="50" cy="50" r="50" fill={circleFill} />
