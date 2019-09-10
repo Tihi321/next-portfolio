@@ -7,6 +7,7 @@ import scss, {
   socialLinkedinIcon,
   socialYoutubeIcon,
   socialGooglePlayIcon,
+  socialWordPressIcon,
   socialGithubIcon,
   socialIconClass,
   socialLinkContent,
@@ -14,13 +15,15 @@ import scss, {
 
 const styles = classNames.bind(scss);
 
-const SocialBar = ({options}) => {
+const SocialBar = ({options, className}) => {
+
+  const socialClassName = className || socialIconClass;
 
   return (
     <div className={socialBarClass}>
       <a
         alt="github"
-        className={styles([socialIconClass, socialGithubIcon])}
+        className={styles([socialClassName, socialGithubIcon])}
         href={options.github}
       >
         <span
@@ -31,7 +34,7 @@ const SocialBar = ({options}) => {
       </a>
       <a
         alt="linkedin"
-        className={styles([socialIconClass, socialLinkedinIcon])}
+        className={styles([socialClassName, socialLinkedinIcon])}
         href={options.linkedin}
       >
         <span
@@ -41,8 +44,19 @@ const SocialBar = ({options}) => {
         </span>
       </a>
       <a
+        alt="WordPress"
+        className={styles([socialClassName, socialWordPressIcon])}
+        href={options.wordPress}
+      >
+        <span
+          className={socialLinkContent}
+        >
+          WordPress
+        </span>
+      </a>
+      <a
         alt="youtube"
-        className={styles([socialIconClass, socialYoutubeIcon])}
+        className={styles([socialClassName, socialYoutubeIcon])}
         href={options.youtube}
       >
         <span
@@ -53,7 +67,7 @@ const SocialBar = ({options}) => {
       </a>
       <a
         alt="googlePlay"
-        className={styles([socialIconClass, socialGooglePlayIcon])}
+        className={styles([socialClassName, socialGooglePlayIcon])}
         href={options.googlePlay}
       >
         <span
@@ -64,7 +78,7 @@ const SocialBar = ({options}) => {
       </a>
       <a
         alt="e-mail"
-        className={styles([socialIconClass, socialMailIcon])}
+        className={styles([socialClassName, socialMailIcon])}
         href={`mailto:${options.contactMail}`}
       >
         <span

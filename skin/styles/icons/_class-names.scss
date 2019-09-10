@@ -1,43 +1,55 @@
 .icon--message {
   &::before {
-    content: unicode($icon--message);     
-    color: #fff;
+    content: unicode($icon--message);
+    color: #FFFFFF;
   }
 }
+
 .icon--google-play {
   &::before {
-    content: unicode($icon--google-play);     
-    color: #fff;
+    content: unicode($icon--google-play);
+    color: #FFFFFF;
   }
 }
+
 .icon--youtube {
   &::before {
-    content: unicode($icon--youtube);     
-    color: #fff;
+    content: unicode($icon--youtube);
+    color: #FFFFFF;
   }
 }
+
 .icon--linkedin {
   &::before {
-    content: unicode($icon--linkedin);     
-    color: #fff;
+    content: unicode($icon--linkedin);
+    color: #FFFFFF;
   }
 }
+
 .icon--github {
   &::before {
-    content: unicode($icon--github);     
-    color: #fff;
+    content: unicode($icon--github);
+    color: #FFFFFF;
   }
 }
+
 .icon--menu {
   &::before {
     content: unicode($icon--menu);
-    color: #fff;
+    color: #FFFFFF;
   }
 }
 
 .icon--close {
-  &:before {
-    content: unicode($icon--close);     
-    color: #fff;
+  &::before {
+    content: unicode($icon--close);
+    color: #FFFFFF;
+  }
+}
+
+.icon--wordpress {
+  &::before {
+    content: unicode($icon--wordpress);
+    color: #FFFFFF;
   }
 }

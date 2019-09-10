@@ -3,11 +3,11 @@
 $card-vars: (
   sizes: (
     mobile: (
-      font-size: 24px,
+      font-size: 16px,
       line-height: 1.25,
     ),
     tablet: (
-      font-size: 32px,
+      font-size: 22px,
     ),
   ),
 );
@@ -20,7 +20,7 @@ $card-vars: (
 
 .cardIimageClass {
   width: 100%;
-  min-height: 180px;
+  padding-bottom: 60%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

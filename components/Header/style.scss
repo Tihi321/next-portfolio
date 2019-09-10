@@ -4,6 +4,15 @@ $header-vars: (
   bg: rgba($base-dove-color, 0.7),
   backdrop-color: $base-white-color,
   backdrop-font: 14px,
+  sizes: (
+    mobile: (
+      font-size: 18px,
+      line-height: 1.25,
+    ),
+    tablet: (
+      font-size: 24px,
+    ),
+  )
 );
 
 .headerClass {
@@ -22,6 +31,7 @@ $header-vars: (
 }
 
 .descriptionClass {
+  @include responsive($header-vars, 'sizes');
   position: relative;
   z-index: 1;
   background-color: map-get-strict($header-vars, 'bg');
