@@ -21,6 +21,6 @@ $title-vars: (
   color: map-get-deep($title-vars, 'text', 'color');
   font-family: map-get-strict($title-vars, 'font-family');
   background-color: var(--accent-color);
-  padding: 20px;
+  padding: 20px 0;
   margin: 0;
 }
