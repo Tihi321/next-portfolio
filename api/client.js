@@ -1,27 +1,21 @@
 import 'isomorphic-fetch';
-const https = require('https');
 
 import {getProjects, getPageProps} from '../utils/data';
 
 export class Client {
-  constructor(api, development) {
+  constructor(api) {
 
     this.api = api;
-    this.development = development;
 
     this.requestCache = new Map()
 
   }
 
   getWPData = async () => {
+
+    console.log(this.api);
   
-    const options = {
-      agent: new https.Agent({
-        rejectUnauthorized: !this.development,
-      }),
-    };
-  
-    const response = await fetch(this.api, options);
+    const response = await fetch(this.api);
   
     return await response.json();
   }

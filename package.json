@@ -1,9 +1,9 @@
 {
   "scripts": {
-    "dev": "cross-env NEXT_ENV=development next",
+    "dev": "next",
     "build": "next build",
     "start": "next start",
-    "production-start": "cross-env NEXT_ENV=production npm install -f && npm run build && npm run start"
+    "production-start": "npm install -f && npm run build && npm run start"
   },
   "dependencies": {
     "@babel/types": "^7.5.5",
@@ -46,7 +46,6 @@
     "@infinumjs/eslint-config-react": "^1.1.0",
     "@infinumjs/stylelint-config": "^1.0.0",
     "babel-eslint": "8",
-    "cross-env": "^5.2.0",
     "eslint": "4.x"
   }
 }
