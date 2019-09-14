@@ -12,8 +12,6 @@ export class Client {
   }
 
   getWPData = async () => {
-
-    console.log(this.api);
   
     const response = await fetch(this.api);
   
