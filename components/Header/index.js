@@ -22,6 +22,7 @@ const Header = (props) => {
   const {
     description,
     animation,
+    lottieLoop,
     children,
   } = props;
 
@@ -44,7 +45,7 @@ const Header = (props) => {
     case 'mp4':
       return <VideoElement mediaUrl={url} />;
     case 'json':
-      return <LottieElement mediaUrl={url} />;
+      return <LottieElement mediaUrl={url} lottieLoop={lottieLoop} />;
     case 'jpg':
     case 'png':
     case 'svg':

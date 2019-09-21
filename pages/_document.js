@@ -17,7 +17,7 @@ class MyDocument extends Document {
           <link rel="icon" href="/static/images/favicon.ico" />
           <meta name="twitter:card" content="summary_large_image" />
         </Head>
-        <body>
+        <body className="body">
           <Main />
           <NextScript />
         </body>

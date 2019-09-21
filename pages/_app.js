@@ -13,6 +13,8 @@ class MyApp extends App {
     super(props);
 
     const client = getOrCreateClient();
+
+    // create cached data for frontend.
     client.hydrate(props.snapshot);
 
     this.state = {
@@ -25,6 +27,7 @@ class MyApp extends App {
     let api = {};
     const client = getOrCreateClient();
 
+    // create get initial props function for component and provide context to it, so this function can be used on every component.
     if (Component.getInitialProps) {
       const pageCtx = { ...ctx, client };  
       api = await Component.getInitialProps(pageCtx);

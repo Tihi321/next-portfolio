@@ -4,6 +4,7 @@ import VideoPage from './components/page';
 const Video = (props) => {
   const {
     videoAnimationFile,
+    videoLootieLoop,
     videoDescription,
     openNavCallback,
     projects,
@@ -18,6 +19,7 @@ const Video = (props) => {
       description={videoDescription}
       animation={videoAnimationFile}
       projects={projects}
+      lottieLoop={videoLootieLoop}
     />
   );
 };

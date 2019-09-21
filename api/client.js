@@ -28,15 +28,18 @@ export class Client {
   
     const json = await this.getWPData();
   
+    // get properties from json.
     const data = getPageProps(json);
     const [videoSlugs, videoProjects] = getProjects(data.props.videoOptions);
   
+    // this will be set to window, and used after first load by react on client.
     this.requestCache.set(param, {
       data,
       videoSlugs,
       videoProjects,
     });
   
+    // this will be used to generate first load html by nextjs
     return {
       data,
       videoSlugs,
@@ -49,6 +52,7 @@ export class Client {
     return JSON.stringify([...this.requestCache]);
   }
   
+  // return cached data.
   hydrate(snapshot) {
     this.requestCache = new Map(JSON.parse(snapshot));
   }

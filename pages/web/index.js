@@ -10,6 +10,7 @@ const Web = (props) => {
   const {
     webAnimationFile,
     webDescription,
+    webLootieLoop,
     webProjects,
     openNavCallback,
   } = props;
@@ -38,7 +39,11 @@ const Web = (props) => {
   return (
     <>
       <Head title="Web Development" />
-      <Header description={webDescription} animation={webAnimationFile}>
+      <Header
+        description={webDescription}
+        animation={webAnimationFile}
+        lottieLoop={webLootieLoop}
+      >
         <TitleBar title="Web Development" />
       </Header>
       <Body>

@@ -35,6 +35,7 @@ $body-vars: (
 .bodyClass {
   padding-top: 20px;
   padding-bottom: 20px;
+  flex: 1;
 
   @include media(mobile up) {
     padding-top: 50px;

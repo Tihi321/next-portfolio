@@ -2,16 +2,23 @@ import React, {useState, useEffect} from 'react';
 import Lottie from 'lottie-react-web';
 
 import {
-  lottieElement,
+  lottieElementClass,
+  spinnerClass,
+  buttonsClass,
+  buttonClass,
+  buttonPlayClass,
+  buttonStopClass,
 } from './style.scss';
 
 const LottieElement = (props) => {
   const {
     mediaUrl,
+    lottieLoop,
   } = props;
 
   const [data, setData] = useState('');
   const [loaded, setLoaded] = useState(false);
+  const [play, setPlay] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,10 +33,9 @@ const LottieElement = (props) => {
     fetchData(setData, setLoaded);
   }, []);
 
-
   const renderLottie = () => {
     const defaultOptions = {
-      loop: true,
+      loop: (lottieLoop === '1'),
       autoplay: true,
       animationData: data,
       rendererSettings: {
@@ -38,21 +44,34 @@ const LottieElement = (props) => {
     };
 
     return (
+      <>
       <div
-        className={lottieElement}
+        className={lottieElementClass}
       >
         <Lottie
           width="auto"
           options={defaultOptions}
+          isStopped={play}
+          eventListeners={[
+            {
+              eventName: 'complete',
+              callback: () => setPlay(true),
+            },
+          ]}
         />
       </div>
+    <div className={buttonsClass}>
+      <button className={`${buttonClass} ${buttonPlayClass}`} onClick={() => setPlay(false)}/>
+      <button className={`${buttonClass} ${buttonStopClass}`} onClick={() => setPlay(true)}/>
+    </div>
+    </>
     );
   };
 
   if (loaded) {
     return renderLottie();
   }
-  return <div>Loading</div>;
+  return <div className={spinnerClass}/>;
 };
 
 

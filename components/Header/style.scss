@@ -46,6 +46,7 @@ $header-vars: (
 }
 
 .isHidden {
+  pointer-events: none;
   opacity: 0;
 }
 

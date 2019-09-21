@@ -12,6 +12,7 @@ const Video = (props) => {
   const {
     videoAnimationFile,
     videoDescription,
+    videoLootieLoop,
     openNavCallback,
     projects,
     slugs,
@@ -77,6 +78,7 @@ const Video = (props) => {
         description={videoDescription}
         animation={videoAnimationFile}
         projects={projects}
+        lottieLoop={videoLootieLoop}
       />
     </>
   );

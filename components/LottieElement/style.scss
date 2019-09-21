@@ -1,4 +1,6 @@
-.lottieElement {
+@import '../../skin/styles/shared';
+
+.lottieElementClass {
   height: 100%;
   pointer-events: none;
   text-align: center;
@@ -14,4 +16,60 @@
     width: auto !important; /* stylelint-disable-line declaration-no-important */
     max-height: 70vh;
   }
+}
+
+.buttonsClass {
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+.buttonClass {
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-style: solid;
+  padding: 0;
+}
+
+.buttonPlayClass {
+  box-sizing: border-box;
+  border-width: 15px 0 15px 25px;
+  border-color: transparent transparent transparent var(--accent-color);
+  margin-right: 10px;
+}
+
+.buttonStopClass {
+  height: 25px;
+  border-style: double;
+  border-width: 0 0 0 15px;
+  border-color: var(--accent-color);
+}
+
+.buttonPlayClass,
+.buttonStopClass {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.spinnerClass {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 5px solid var(--accent-color);
+  animation-iteration-count: infinite;
+
+  @include animation(scale, 0.6s);
 }

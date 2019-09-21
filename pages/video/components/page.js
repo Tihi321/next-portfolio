@@ -17,6 +17,7 @@ const VideoPage = (props) => {
     animation,
     description,
     projects,
+    lottieLoop,
   } = props;
 
 
@@ -40,7 +41,11 @@ const VideoPage = (props) => {
   return (
     <>
       <Head title="Video Development" />
-      <Header description={description} animation={animation}>
+      <Header
+        description={description}
+        animation={animation}
+        lottieLoop={lottieLoop}
+      >
         <TitleBar title="Video Production" />
       </Header>
       <Body>

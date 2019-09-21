@@ -21,4 +21,10 @@ body {
   background-color: $base-background-color;
   position: relative;
   overflow-x: hidden;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
 }

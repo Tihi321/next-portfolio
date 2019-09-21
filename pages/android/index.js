@@ -10,6 +10,7 @@ const Android = (props) => {
   const {
     androidAnimationFile,
     androidDescription,
+    androidLootieLoop,
     openNavCallback,
     androidProjects,
   } = props;
@@ -42,6 +43,7 @@ const Android = (props) => {
       <Header
         description={androidDescription}
         animation={androidAnimationFile}
+        lottieLoop={androidLootieLoop}
       >
         <TitleBar
           title="Android Development"
