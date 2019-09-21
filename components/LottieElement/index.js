@@ -52,12 +52,6 @@ const LottieElement = (props) => {
           width="auto"
           options={defaultOptions}
           isStopped={play}
-          eventListeners={[
-            {
-              eventName: 'complete',
-              callback: () => setPlay(true),
-            },
-          ]}
         />
       </div>
     <div className={buttonsClass}>
